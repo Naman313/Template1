@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Here We Grow Daycare | Premier Child Care & Early Learning in Pembroke & Randolph, MA</title>
-  <meta name="description" content="Here We Grow Daycare offers nurturing, play-based infant, toddler, and preschool programs in Pembroke and Randolph, MA. Low teacher ratios, organic meals, and kindergarten prep." />
+  <title>Here We Grow Daycare & Early Learning Academy | Pembroke & Randolph, MA</title>
+  <meta name="description" content="Here We Grow Daycare offers loving, play-based infant, toddler, and preschool childcare in Pembroke and Randolph, MA. Low teacher ratios, wholesome meals, and kindergarten readiness." />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -13,39 +13,19 @@
       theme: {
         extend: {
           colors: {
-            sprout: {
-              50: '#F0FDF4',
-              100: '#DCFCE7',
-              200: '#BBF7D0',
-              400: '#34D399',
-              500: '#10B981',
-              600: '#059669',
-              700: '#047857',
-              800: '#065F46',
-            },
-            sunny: {
-              100: '#FEF3C7',
-              200: '#FDE68A',
-              400: '#FBBF24',
-              500: '#F59E0B',
-              600: '#D97706',
-            },
-            skybrand: {
-              50: '#F0F9FF',
-              100: '#E0F2FE',
-              500: '#0284C7',
-              600: '#0369A1',
-            },
-            coral: {
-              50: '#FFF1F2',
-              100: '#FFE4E6',
-              500: '#F43F5E',
-              600: '#E11D48',
-            },
-            purplebrand: {
-              50: '#FAF5FF',
-              100: '#EDE9FE',
-              500: '#8B5CF6',
+            tle: {
+              cyan: '#00AEEF',
+              cyandark: '#0099D8',
+              cyanlight: '#EAF5FC',
+              purple: '#7C2D87',
+              purpledark: '#641E6E',
+              purplelight: '#F6EDF8',
+              yellow: '#FFB800',
+              yellowlight: '#FFF8E1',
+              green: '#7CB342',
+              greenlight: '#F1F8E9',
+              coral: '#FF4081',
+              corallight: '#FCE4EC',
             }
           },
           fontFamily: {
@@ -66,71 +46,139 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="bg-[#FAF8F5] text-slate-700 antialiased selection:bg-sprout-500 selection:text-white">
+<body class="bg-white text-slate-700 antialiased selection:bg-tle-cyan selection:text-white">
+
+  <!-- ================= TOP SCROLL PROGRESS BAR ================= -->
+  <div id="scrollProgressBar" role="progressbar" aria-hidden="true"></div>
+
+  <!-- ================= 3D FLIPPING BOOK PRELOADER (TLE STYLE) ================= -->
+  <div id="bookPreloader" role="status" aria-label="Loading Here We Grow Daycare">
+    
+    <div class="preload-book-wrapper">
+      <div class="preload-book-spine"></div>
+      
+      <!-- Left Static Page (Cute Baby Tummy Time) -->
+      <div class="preload-book-side left">
+        <img src="https://images.unsplash.com/photo-1566004100631-35d015d6a491?w=400&auto=format&fit=crop&q=80" alt="Cute baby tummy time" class="w-full h-full object-cover" />
+        <div class="preload-page-overlay">
+          <span>👶</span> Infant Care
+        </div>
+      </div>
+
+      <!-- Right Static Base Page (Smiling Girl with Paints) -->
+      <div class="preload-book-side right">
+        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&auto=format&fit=crop&q=80" alt="Smiling girl with paints" class="w-full h-full object-cover" />
+        <div class="preload-page-overlay">
+          <span>☀️</span> Outdoor Play
+        </div>
+      </div>
+
+      <!-- 3D Flipping Sheet 1 (Art Studio <-> Storytime) -->
+      <div class="preload-flipping-sheet sheet-1">
+        <div class="preload-sheet-front">
+          <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&auto=format&fit=crop&q=80" alt="Smiling girl painting" class="w-full h-full object-cover" />
+          <div class="preload-page-overlay">
+            <span>🎨</span> Creative Art
+          </div>
+        </div>
+        <div class="preload-sheet-back">
+          <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400&auto=format&fit=crop&q=80" alt="Toddler with picture book" class="w-full h-full object-cover" />
+          <div class="preload-page-overlay">
+            <span>📚</span> Story Circles
+          </div>
+        </div>
+      </div>
+
+      <!-- 3D Flipping Sheet 2 (Kids Writing <-> Smiling Baby) -->
+      <div class="preload-flipping-sheet sheet-2">
+        <div class="preload-sheet-front">
+          <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=400&auto=format&fit=crop&q=80" alt="Children drawing in classroom" class="w-full h-full object-cover" />
+          <div class="preload-page-overlay">
+            <span>🔬</span> Early STEAM
+          </div>
+        </div>
+        <div class="preload-sheet-back">
+          <img src="https://images.unsplash.com/photo-1566004100631-35d015d6a491?w=400&auto=format&fit=crop&q=80" alt="Cute smiling baby" class="w-full h-full object-cover" />
+          <div class="preload-page-overlay">
+            <span>🧸</span> Toddler Play
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    <div class="text-center space-y-1">
+      <div class="text-lg font-heading font-extrabold text-slate-900 flex items-center justify-center gap-1">
+        <span class="text-[#E11D48]">H</span><span class="text-[#FFB800]">e</span><span class="text-[#7CB342]">r</span><span class="text-[#00AEEF]">e</span> <span class="text-[#7C2D87]">We Grow</span> Daycare
+      </div>
+      <p class="text-xs text-slate-500 font-medium tracking-wide">
+        <span class="text-tle-purple font-bold">happy</span> <span class="text-tle-green font-bold">happens</span> <span class="text-tle-yellow font-bold">here...</span>
+      </p>
+    </div>
+
+    <div class="preloader-progress-bar">
+      <div class="preloader-progress-fill"></div>
+    </div>
+
+    <button onclick="dismissPreloader()" class="mt-6 text-[11px] font-bold text-slate-400 hover:text-tle-purple transition">
+      Skip Intro →
+    </button>
+  </div>
 
   <!-- ================= TOP NOTIFICATION / PROMO STRIP ================= -->
-  <div class="bg-gradient-to-r from-sprout-700 via-sprout-600 to-sprout-700 text-white text-xs font-semibold py-2.5 px-4">
+  <div class="bg-gradient-to-r from-tle-purple via-[#8B2FA3] to-tle-purple text-white text-xs font-semibold py-2.5 px-4">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
       <div class="flex items-center gap-2">
-        <span class="bg-sunny-400 text-slate-900 text-[11px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">★ Special Offer</span>
-        <span>Schedule an online tour this week and receive a <strong class="text-sunny-200 underline">$50 Registration Credit</strong>!</span>
+        <span class="bg-tle-yellow text-slate-900 text-[11px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow-sm">★ Special Offer</span>
+        <span>Schedule an online tour this week and receive a <strong class="text-tle-yellow underline">$50 Registration Credit</strong>!</span>
       </div>
       <div class="flex items-center gap-4 text-xs font-medium">
-        <span class="hidden md:inline text-sprout-200">Call Campus:</span>
-        <a href="tel:7818261900" class="hover:text-sunny-300 transition flex items-center gap-1 font-bold">
+        <span class="hidden md:inline text-purple-200">Call Us Directly:</span>
+        <a href="tel:7818261900" class="hover:text-tle-yellow transition flex items-center gap-1 font-bold">
           <i data-lucide="phone" class="w-3.5 h-3.5"></i> Pembroke: (781) 826-1900
         </a>
-        <span class="hidden sm:inline text-sprout-400">|</span>
-        <a href="tel:7819614488" class="hover:text-sunny-300 transition flex items-center gap-1 font-bold">
+        <span class="hidden sm:inline text-purple-300">|</span>
+        <a href="tel:7819614488" class="hover:text-tle-yellow transition flex items-center gap-1 font-bold">
           <i data-lucide="phone" class="w-3.5 h-3.5"></i> Randolph: (781) 961-4488
         </a>
       </div>
     </div>
   </div>
 
-  <!-- ================= NAVIGATION BAR ================= -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200/80 shadow-sm transition">
+  <!-- ================= NAVIGATION BAR (THE LEARNING EXPERIENCE STYLE) ================= -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-100 shadow-sm transition">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <!-- Brand Logo -->
+      <!-- Brand Logo (TLE Style Playful Bouncy Letters) -->
       <a href="#" class="flex items-center gap-3 group">
-        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-sprout-600 to-sprout-400 flex items-center justify-center text-white shadow-md shadow-sprout-500/20 group-hover:scale-105 transition">
-          <span class="text-2xl">🌱</span>
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-tle-purple to-tle-cyan flex items-center justify-center text-white text-2xl shadow-md shadow-tle-cyan/20 group-hover:scale-105 transition">
+          🧸
         </div>
         <div>
-          <span class="font-heading text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-1">
-            Here We Grow <span class="text-sprout-600">Daycare</span>
-          </span>
-          <span class="text-[11px] font-medium text-slate-500 tracking-wider block -mt-1 uppercase">
-            Pembroke &bull; Randolph, Massachusetts
+          <div class="font-heading text-2xl font-black tracking-tight leading-none flex items-center gap-1">
+            <span class="text-[#E11D48]">H</span><span class="text-[#FFB800]">e</span><span class="text-[#7CB342]">r</span><span class="text-[#00AEEF]">e</span> <span class="text-[#8B5CF6]">We</span> <span class="text-[#7C2D87]">Grow</span>
+          </div>
+          <span class="text-[10px] font-bold text-slate-500 tracking-wider block mt-0.5 uppercase">
+            Academy of Early Education &bull; Pembroke &bull; Randolph, MA
           </span>
         </div>
       </a>
 
       <!-- Desktop Nav Links -->
-      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-600">
-        <a href="#storybook-section" class="hover:text-sprout-600 transition flex items-center gap-1">
-          <i data-lucide="book-open" class="w-4 h-4 text-sprout-600"></i> Storybook
-        </a>
-        <a href="#age-explorer" class="hover:text-sprout-600 transition flex items-center gap-1">
-          <i data-lucide="baby" class="w-4 h-4 text-sprout-500"></i> Age Groups
-        </a>
-        <a href="#curriculum" class="hover:text-sprout-600 transition flex items-center gap-1">
-          <i data-lucide="sparkles" class="w-4 h-4 text-sunny-500"></i> Wonder & Grow™
-        </a>
-        <a href="#daily-rhythm" class="hover:text-sprout-600 transition flex items-center gap-1">
-          <i data-lucide="clock" class="w-4 h-4 text-skybrand-500"></i> Daily Rhythm
-        </a>
-        <a href="#tuition-calc" class="hover:text-sprout-600 transition flex items-center gap-1">
-          <i data-lucide="calculator" class="w-4 h-4 text-coral-500"></i> Tuition Estimator
-        </a>
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-bold text-slate-700">
+        <a href="#curriculum" class="hover:text-tle-cyan transition">Curriculum</a>
+        <a href="#programs-grid" class="hover:text-tle-cyan transition">Programs</a>
+        <a href="#storybook-section" class="hover:text-tle-cyan transition">3D Storybook</a>
+        <a href="#campuses" class="hover:text-tle-cyan transition">Campuses</a>
+        <a href="#daily-rhythm" class="hover:text-tle-cyan transition">Daily Schedule</a>
+        <a href="#tuition-calc" class="hover:text-tle-cyan transition">Tuition</a>
       </nav>
 
-      <!-- CTA Buttons -->
+      <!-- CTA Button (Rounded Cyan Pill with Star Icon like TLE) -->
       <div class="hidden sm:flex items-center gap-3">
-        <button onclick="openTourModal('Any')" class="px-5 py-3 rounded-2xl font-heading font-bold text-sm bg-gradient-to-r from-sprout-600 to-sprout-500 text-white shadow-lg shadow-sprout-500/25 hover:shadow-sprout-500/40 hover:-translate-y-0.5 active:translate-y-0 transition flex items-center gap-2">
-          <i data-lucide="calendar-check" class="w-4 h-4"></i>
-          Schedule a Tour
+        <button onclick="openTourModal('Any')" class="px-6 py-3.5 rounded-full font-heading font-extrabold text-sm bg-tle-cyan hover:bg-tle-cyandark text-white shadow-lg shadow-tle-cyan/30 hover:-translate-y-0.5 active:translate-y-0 transition flex items-center gap-2">
+          <span>Find a Center</span>
+          <i data-lucide="sparkles" class="w-4 h-4 text-tle-yellow"></i>
         </button>
       </div>
 
@@ -141,151 +189,126 @@
     </div>
 
     <!-- Mobile Dropdown Menu -->
-    <div id="mobileMenu" class="hidden lg:hidden border-t border-stone-200 bg-white px-6 py-5 space-y-4 shadow-xl">
-      <a href="#storybook-section" class="block text-base font-semibold text-slate-700 hover:text-sprout-600">📖 3D Storybook Flip</a>
-      <a href="#age-explorer" class="block text-base font-semibold text-slate-700 hover:text-sprout-600">👶 Age Classrooms</a>
-      <a href="#curriculum" class="block text-base font-semibold text-slate-700 hover:text-sprout-600">✨ Wonder & Grow™ Curriculum</a>
-      <a href="#daily-rhythm" class="block text-base font-semibold text-slate-700 hover:text-sprout-600">⏰ Daily Schedule</a>
-      <a href="#tuition-calc" class="block text-base font-semibold text-slate-700 hover:text-sprout-600">💵 Tuition Calculator</a>
-      <button onclick="openTourModal('Any')" class="w-full py-3 rounded-xl font-heading font-bold text-sm bg-sprout-600 text-white text-center shadow-md">
-        Schedule a Tour ($50 Credit)
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-stone-100 bg-white px-6 py-5 space-y-4 shadow-xl">
+      <a href="#curriculum" class="block text-base font-bold text-slate-700 hover:text-tle-cyan">✨ Curriculum</a>
+      <a href="#programs-grid" class="block text-base font-bold text-slate-700 hover:text-tle-cyan">👶 Age Programs</a>
+      <a href="#storybook-section" class="block text-base font-bold text-slate-700 hover:text-tle-cyan">📖 3D Storybook</a>
+      <a href="#campuses" class="block text-base font-bold text-slate-700 hover:text-tle-cyan">🏫 Campuses (Pembroke &amp; Randolph)</a>
+      <a href="#daily-rhythm" class="block text-base font-bold text-slate-700 hover:text-tle-cyan">⏰ Daily Rhythm</a>
+      <a href="#tuition-calc" class="block text-base font-bold text-slate-700 hover:text-tle-cyan">💵 Tuition Calculator</a>
+      <button onclick="openTourModal('Any')" class="w-full py-3.5 rounded-full font-heading font-extrabold text-sm bg-tle-cyan text-white text-center shadow-md">
+        Find a Center &bull; Schedule Tour
       </button>
     </div>
   </header>
 
   <main>
 
-    <!-- ================= HERO SECTION ================= -->
-    <section class="relative pt-12 pb-16 md:pt-18 md:pb-24 overflow-hidden bg-gradient-to-b from-white via-sprout-50/40 to-[#FAF8F5]">
+    <!-- ================= HERO SECTION (THE LEARNING EXPERIENCE STYLE) ================= -->
+    <section class="relative pt-12 pb-20 md:pt-16 md:pb-28 overflow-hidden bg-[#EAF5FC]">
       
-      <div class="absolute top-12 left-10 w-72 h-72 bg-sunny-100/60 rounded-full blur-3xl -z-10 pointer-events-none"></div>
-      <div class="absolute bottom-10 right-10 w-80 h-80 bg-sprout-100/60 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+      <!-- Soft ambient decorative bubbles -->
+      <div class="absolute top-10 right-1/3 w-64 h-64 bg-tle-purplelight/60 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+      <div class="absolute bottom-10 left-10 w-72 h-72 bg-tle-yellowlight/80 rounded-full blur-3xl -z-10 pointer-events-none"></div>
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
-          <!-- Left Column: Emotional Hook & Interactive Mascot Picker (7 cols) -->
-          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <!-- Left Column: Copy, Tagline & Search Pill (7 cols) -->
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left reveal">
             
-            <!-- Trust Pill -->
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sprout-100/80 border border-sprout-200 text-sprout-800 text-xs font-bold shadow-sm">
-              <span class="text-sm">🌟</span>
-              <span>Top-Rated Early Learning & Childcare in South Shore MA</span>
+            <!-- Eyebrow: "happy happens here." (Exact TLE signature branding) -->
+            <div class="text-2xl sm:text-3xl font-heading font-black tracking-tight flex items-center justify-center lg:justify-start gap-1.5">
+              <span class="text-tle-purple">happy</span>
+              <span class="text-tle-green">happens</span>
+              <span class="text-tle-yellow">here.</span>
             </div>
 
-            <!-- Main Headline -->
-            <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-[1.12]">
-              Where <span class="text-sprout-600 relative inline-block">
-                Joy Sparks
-                <svg class="absolute -bottom-2 left-0 w-full h-3 text-sunny-400 -z-10 opacity-70" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0 15 Q50 0 100 15" stroke="currentColor" stroke-width="8" fill="none" stroke-linecap="round"/></svg>
-              </span> Genius & Little Sprouts Grow Big!
+            <!-- Main Headline (TLE Dual-Color Style) -->
+            <h1 class="font-heading text-4xl sm:text-5xl lg:text-[58px] font-black text-slate-900 tracking-tight leading-[1.12]">
+              <span class="text-tle-purple block">Preschool &amp; Daycare</span>
+              That Inspires Discovery and Makes Learning Fun
             </h1>
 
-            <p class="text-lg sm:text-xl text-slate-600 max-w-2xl font-normal leading-relaxed">
-              Experience the warmth of a close-knit neighborhood academy paired with world-class, play-based early learning for children from <strong>1 month to 5 years</strong>.
+            <p class="text-base sm:text-lg text-slate-600 max-w-xl font-normal leading-relaxed">
+              Here We Grow Daycare offers premier infant, toddler, and preschool programs for ages 1 month to 5 years so your child can <strong class="text-tle-purple font-extrabold">learn, play, and grow</strong>.
             </p>
 
-            <!-- Call to Actions -->
-            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-              <button onclick="openTourModal('Any')" class="w-full sm:w-auto px-8 py-4 rounded-2xl font-heading font-bold text-base bg-gradient-to-r from-sprout-600 to-sprout-500 text-white shadow-xl shadow-sprout-500/25 hover:shadow-sprout-500/40 hover:-translate-y-0.5 active:translate-y-0 transition flex items-center justify-center gap-2">
-                <i data-lucide="calendar" class="w-5 h-5"></i>
-                Book a Free Tour
-              </button>
-              
-              <a href="#storybook-section" class="w-full sm:w-auto px-7 py-4 rounded-2xl font-heading font-bold text-base bg-white text-slate-700 border-2 border-stone-200 hover:border-sprout-400 hover:bg-sprout-50/50 transition flex items-center justify-center gap-2 shadow-sm">
-                <i data-lucide="book-open" class="w-5 h-5 text-sprout-600"></i>
-                Flip Through 3D Storybook
-              </a>
+            <!-- Search / Campus Finder Pill (Exact TLE Style) -->
+            <div class="pt-2">
+              <div class="bg-white p-2 rounded-full shadow-xl shadow-tle-cyan/15 border-2 border-sky-100 flex flex-col sm:flex-row items-center gap-2 max-w-lg mx-auto lg:mx-0">
+                
+                <div class="flex items-center gap-2.5 px-4 py-2.5 w-full sm:w-auto flex-1">
+                  <i data-lucide="map-pin" class="w-5 h-5 text-tle-cyan shrink-0"></i>
+                  <select id="heroCampusSelector" class="w-full bg-transparent font-bold text-slate-700 text-sm outline-none cursor-pointer">
+                    <option value="Pembroke">Pembroke Campus (55 Corporate Park Dr)</option>
+                    <option value="Randolph">Randolph Campus (716 N Main St)</option>
+                  </select>
+                </div>
+
+                <button onclick="openTourModal(document.getElementById('heroCampusSelector').value); triggerConfetti();" class="w-full sm:w-auto px-7 py-3.5 rounded-full font-heading font-extrabold text-sm bg-tle-cyan hover:bg-tle-cyandark text-white shadow-md shadow-tle-cyan/30 hover:scale-105 active:scale-95 transition flex items-center justify-center gap-2 shrink-0">
+                  <i data-lucide="search" class="w-4 h-4"></i>
+                  <span>Find a Center</span>
+                </button>
+
+              </div>
             </div>
 
-            <!-- Mascot Guide & Interactive Activity Popper -->
-            <div class="pt-6 border-t border-stone-200/80 mt-8">
-              
-              <div class="flex items-center gap-3 mb-3 justify-center lg:justify-start">
-                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-sunny-400 to-sunny-200 border-2 border-white shadow flex items-center justify-center text-xl animate-bounce-soft">
-                  🌱
-                </div>
-                <div class="text-left">
-                  <div class="text-xs font-bold text-slate-800 flex items-center gap-1">
-                    Sprout the Mascot <span class="text-sprout-600">&bull; Tap an Activity Bubble!</span>
-                  </div>
-                  <div id="activeBubbleTitle" class="text-xs font-semibold text-sprout-700">
-                    🔬 Hands-on Science & Water Tables
-                  </div>
-                </div>
+            <!-- Social Proof Bar -->
+            <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs font-bold text-slate-500">
+              <div class="flex items-center gap-1.5 text-amber-500">
+                <span>⭐⭐⭐⭐⭐</span>
+                <span class="text-slate-700">4.9/5 Rating</span>
               </div>
-
-              <!-- Clickable Activity Bubbles -->
-              <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
-                <button onclick="selectHeroBubble('science', '🔬 Tiny Innovators STEM', 'Children discover water buoyancy, color mixing, and magnetic shapes in daily discovery labs!')" class="px-3.5 py-2 rounded-2xl bg-white border border-stone-200 hover:border-sprout-500 hover:bg-sprout-50 text-xs font-bold text-slate-700 shadow-sm transition flex items-center gap-1.5 group">
-                  <span class="group-hover:scale-125 transition">🔬</span> STEM Experiments
-                </button>
-                <button onclick="selectHeroBubble('language', '🔤 Baby Sign Language & Phonics', 'Little ones learn 20+ sign language gestures and fun rhyming games to build early confidence.')" class="px-3.5 py-2 rounded-2xl bg-white border border-stone-200 hover:border-skybrand-500 hover:bg-skybrand-50 text-xs font-bold text-slate-700 shadow-sm transition flex items-center gap-1.5 group">
-                  <span class="group-hover:scale-125 transition">🔤</span> Sign Language
-                </button>
-                <button onclick="selectHeroBubble('art', '🎨 Messy Sensory & Art Studio', 'Finger painting, playdough sculpting, and texture exploration spark pure creativity.')" class="px-3.5 py-2 rounded-2xl bg-white border border-stone-200 hover:border-coral-500 hover:bg-coral-50 text-xs font-bold text-slate-700 shadow-sm transition flex items-center gap-1.5 group">
-                  <span class="group-hover:scale-125 transition">🎨</span> Sensory Art
-                </button>
-                <button onclick="selectHeroBubble('outdoor', '🌳 Nature Play Yards', 'Spacious fenced outdoor yards with turf, climbing logs, tricycle paths, and fresh pine breeze.')" class="px-3.5 py-2 rounded-2xl bg-white border border-stone-200 hover:border-sunny-500 hover:bg-sunny-50 text-xs font-bold text-slate-700 shadow-sm transition flex items-center gap-1.5 group">
-                  <span class="group-hover:scale-125 transition">🌳</span> Outdoor Yards
-                </button>
-                <button onclick="selectHeroBubble('reading', '📚 Storytime & Circle Rhymes', 'Daily cozy circle times that instill a genuine lifelong love for books and vocabulary.')" class="px-3.5 py-2 rounded-2xl bg-white border border-stone-200 hover:border-purplebrand-500 hover:bg-purplebrand-50 text-xs font-bold text-slate-700 shadow-sm transition flex items-center gap-1.5 group">
-                  <span class="group-hover:scale-125 transition">📚</span> Story Circles
-                </button>
-              </div>
-
-              <p id="heroBubbleDesc" class="text-xs text-slate-500 italic mt-2.5">
-                "Children discover water buoyancy, color mixing, and magnetic shapes in daily discovery labs!"
-              </p>
-
+              <span>&bull;</span>
+              <span class="text-slate-700 flex items-center gap-1">
+                <i data-lucide="shield-check" class="w-4 h-4 text-tle-green"></i> MA EEC Licensed
+              </span>
+              <span>&bull;</span>
+              <span class="text-slate-700 flex items-center gap-1">
+                <i data-lucide="heart" class="w-4 h-4 text-tle-coral"></i> 1:4 Low Infant Ratio
+              </span>
             </div>
 
           </div>
 
-          <!-- Right Column: 4-Photo Kids Mosaic (5 cols) -->
-          <div class="lg:col-span-5 relative">
-            <div class="grid grid-cols-2 gap-4">
+          <!-- Right Column: Grand Arched Photo Portal (Exact TLE Style) -->
+          <div class="lg:col-span-5 relative flex justify-center reveal-zoom">
+            
+            <div class="relative w-full max-w-md">
               
-              <div class="space-y-4">
-                <div class="relative rounded-3xl overflow-hidden shadow-lg border-4 border-white aspect-[4/5] group">
-                  <img src="https://images.unsplash.com/photo-1596496050827-8299e0220de1?w=800&auto=format&fit=crop&q=80" alt="Child exploring colorful sensory toys" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-                  <div class="absolute bottom-3 left-3 right-3 bg-white/90 backdrop-blur-sm rounded-xl px-2.5 py-1 text-[11px] font-bold text-slate-800 shadow flex items-center gap-1">
-                    <span>🎨</span> Sensory Art Studio
+              <!-- Arched Photo Portal -->
+              <div class="hero-arch-portal overflow-hidden aspect-[4/5] bg-white relative">
+                <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&auto=format&fit=crop&q=80" alt="Smiling little girl learning and playing" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
+                
+                <!-- Inner Bottom Badge -->
+                <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-2xl p-3.5 shadow-lg flex items-center gap-3 border border-stone-100">
+                  <div class="w-10 h-10 rounded-xl bg-tle-purple text-white flex items-center justify-center text-xl shrink-0 shadow-sm">
+                    ✨
                   </div>
-                </div>
-
-                <div class="relative rounded-3xl overflow-hidden shadow-lg border-4 border-white aspect-[4/3] group">
-                  <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop&q=80" alt="Kids reading in circle time" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-                  <div class="absolute bottom-3 left-3 right-3 bg-white/90 backdrop-blur-sm rounded-xl px-2.5 py-1 text-[11px] font-bold text-slate-800 shadow flex items-center gap-1">
-                    <span>📚</span> Circle Storytime
-                  </div>
-                </div>
-              </div>
-
-              <div class="space-y-4 pt-6">
-                <div class="relative rounded-3xl overflow-hidden shadow-lg border-4 border-white aspect-[4/3] group">
-                  <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=800&auto=format&fit=crop&q=80" alt="Smiling child playing outdoors" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-                  <div class="absolute bottom-3 left-3 right-3 bg-white/90 backdrop-blur-sm rounded-xl px-2.5 py-1 text-[11px] font-bold text-slate-800 shadow flex items-center gap-1">
-                    <span>🌳</span> Safe Play Yards
-                  </div>
-                </div>
-
-                <div class="relative rounded-3xl overflow-hidden shadow-lg border-4 border-white aspect-[4/5] group">
-                  <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800&auto=format&fit=crop&q=80" alt="Infant smiling during gentle tummy time" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-                  <div class="absolute bottom-3 left-3 right-3 bg-white/90 backdrop-blur-sm rounded-xl px-2.5 py-1 text-[11px] font-bold text-slate-800 shadow flex items-center gap-1">
-                    <span>👶</span> 1:4 Infant Ratio
+                  <div>
+                    <span class="text-xs font-extrabold text-slate-900 block">Wonder &amp; Grow™ Curriculum</span>
+                    <span class="text-[11px] text-slate-500">Hands-on Phonics, STEM &amp; Baby Sign Language</span>
                   </div>
                 </div>
               </div>
 
-            </div>
+              <!-- Mascot Animated Sticker (TLE Character Style) -->
+              <div class="absolute -top-4 -left-4 bg-white rounded-3xl p-3 shadow-xl border-2 border-tle-yellow flex items-center gap-2 animate-float">
+                <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-tle-yellow to-amber-300 flex items-center justify-center text-2xl shadow-sm">
+                  🧸
+                </div>
+                <div class="text-left pr-1">
+                  <span class="text-[10px] font-extrabold uppercase text-tle-purple block tracking-wider">Mascot</span>
+                  <span class="text-xs font-black text-slate-900">Pip the Bear!</span>
+                </div>
+              </div>
 
-            <div class="absolute -top-3 -right-3 bg-sunny-400 text-slate-900 font-heading font-bold text-xs px-3.5 py-1.5 rounded-full shadow-lg border-2 border-white flex items-center gap-1 animate-float">
-              <span>✨</span> 100% CPR Certified
-            </div>
+              <!-- Floating Trust Badge -->
+              <div class="absolute -bottom-3 -right-3 bg-tle-cyan text-white font-heading font-black text-xs px-4 py-2 rounded-full shadow-xl border-2 border-white flex items-center gap-1.5 animate-float-reverse">
+                <span>⭐</span> $50 Tour Credit
+              </div>
 
-            <div class="absolute -bottom-3 -left-3 bg-sprout-600 text-white font-heading font-bold text-xs px-3.5 py-1.5 rounded-full shadow-lg border-2 border-white flex items-center gap-1 animate-float-reverse">
-              <span>🛡️</span> MA EEC Licensed
             </div>
 
           </div>
@@ -294,50 +317,144 @@
       </div>
     </section>
 
-    <!-- ================= 3D STORYBOOK FLIP CAROUSEL SECTION ================= -->
-    <section id="storybook-section" class="py-20 bg-white border-y border-stone-200">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- ================= 4 PROGRAMS GRID (THE LEARNING EXPERIENCE STYLE) ================= -->
+    <section id="programs-grid" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
-          <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-sprout-100 text-sprout-800 text-xs font-bold uppercase tracking-wider">
-            <span>📖</span> Interactive 3D Storybook
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3 reveal">
+          <div class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-tle-cyanlight text-tle-cyan font-black text-xs uppercase tracking-wider">
+            <span>👶</span> Programs for Every Stage
           </div>
-          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900">
-            Flip Through Our Story
+          <h2 class="font-heading text-3xl sm:text-4xl font-black text-slate-900">
+            Nurturing Early Education by Age Group
           </h2>
-          <p class="text-sm text-slate-600">
-            Click the book buttons below to watch pages flip in 3D and explore each chapter of care!
+          <p class="text-base text-slate-600">
+            From gentle infant cuddles to confident kindergarten readiness, each classroom is designed for joyful growth.
           </p>
         </div>
 
-        <!-- 3D Book Scene Container -->
-        <div class="book-scene max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <!-- Infant Card -->
+          <div class="bg-gradient-to-b from-tle-corallight to-white p-6 rounded-[32px] border-2 border-pink-100 hover:border-tle-coral hover:shadow-xl transition duration-300 flex flex-col justify-between space-y-5 reveal stagger-1">
+            <div class="space-y-3">
+              <div class="w-14 h-14 rounded-2xl bg-tle-coral text-white flex items-center justify-center text-3xl shadow-md shadow-pink-400/30">
+                🍼
+              </div>
+              <span class="text-xs font-extrabold uppercase text-tle-coral tracking-wider block">1 – 14 Months</span>
+              <h3 class="font-heading font-black text-2xl text-slate-900">Infant Care</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Individual sleeping & feeding cycles, warm rocking, tummy time, and <strong>Baby Sign Language</strong> to communicate early.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-pink-100 flex items-center justify-between text-xs font-extrabold text-tle-coral">
+              <span>1:4 Low Ratio</span>
+              <button onclick="openTourModal('Any', 'Infant')" class="hover:underline flex items-center gap-0.5">Explore →</button>
+            </div>
+          </div>
+
+          <!-- Toddler Card -->
+          <div class="bg-gradient-to-b from-tle-yellowlight to-white p-6 rounded-[32px] border-2 border-amber-100 hover:border-tle-yellow hover:shadow-xl transition duration-300 flex flex-col justify-between space-y-5 reveal stagger-2">
+            <div class="space-y-3">
+              <div class="w-14 h-14 rounded-2xl bg-tle-yellow text-slate-900 flex items-center justify-center text-3xl shadow-md shadow-amber-400/30">
+                🧸
+              </div>
+              <span class="text-xs font-extrabold uppercase text-amber-700 tracking-wider block">15 – 24 Months</span>
+              <h3 class="font-heading font-black text-2xl text-slate-900">Toddler Play</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Sensory motor stations, early vocabulary building, sharing routines, block building, and potty partnership.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-amber-100 flex items-center justify-between text-xs font-extrabold text-amber-700">
+              <span>1:4 Ratio</span>
+              <button onclick="openTourModal('Any', 'Toddler')" class="hover:underline flex items-center gap-0.5">Explore →</button>
+            </div>
+          </div>
+
+          <!-- Twos Card -->
+          <div class="bg-gradient-to-b from-tle-greenlight to-white p-6 rounded-[32px] border-2 border-lime-100 hover:border-tle-green hover:shadow-xl transition duration-300 flex flex-col justify-between space-y-5 reveal stagger-3">
+            <div class="space-y-3">
+              <div class="w-14 h-14 rounded-2xl bg-tle-green text-white flex items-center justify-center text-3xl shadow-md shadow-lime-400/30">
+                🎨
+              </div>
+              <span class="text-xs font-extrabold uppercase text-tle-green tracking-wider block">2 – 3 Years</span>
+              <h3 class="font-heading font-black text-2xl text-slate-900">Twos Explorer</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Creative finger painting, circle singing, interactive storytelling, fine-motor puzzles, and social play.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-lime-100 flex items-center justify-between text-xs font-extrabold text-tle-green">
+              <span>1:5 Ratio</span>
+              <button onclick="openTourModal('Any', 'Twos')" class="hover:underline flex items-center gap-0.5">Explore →</button>
+            </div>
+          </div>
+
+          <!-- Preschool & Pre-K Card -->
+          <div class="bg-gradient-to-b from-tle-purplelight to-white p-6 rounded-[32px] border-2 border-purple-100 hover:border-tle-purple hover:shadow-xl transition duration-300 flex flex-col justify-between space-y-5 reveal stagger-4">
+            <div class="space-y-3">
+              <div class="w-14 h-14 rounded-2xl bg-tle-purple text-white flex items-center justify-center text-3xl shadow-md shadow-purple-400/30">
+                ✏️
+              </div>
+              <span class="text-xs font-extrabold uppercase text-tle-purple tracking-wider block">3 – 5 Years</span>
+              <h3 class="font-heading font-black text-2xl text-slate-900">Preschool &amp; Pre-K</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Phonics, writing full name, hands-on STEM experiments, early math counting, and complete kindergarten readiness.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-purple-100 flex items-center justify-between text-xs font-extrabold text-tle-purple">
+              <span>Kindergarten Ready</span>
+              <button onclick="openTourModal('Any', 'Preschool')" class="hover:underline flex items-center gap-0.5">Explore →</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 3D STORYBOOK FLIP CAROUSEL SECTION (TLE PURPLE & GOLD) ================= -->
+    <section id="storybook-section" class="py-20 bg-[#FAF9F6] border-y border-stone-200">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-10 space-y-2 reveal">
+          <div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-tle-purplelight text-tle-purple text-xs font-black uppercase tracking-wider">
+            <span>📖</span> Interactive 3D Storybook
+          </div>
+          <h2 class="font-heading text-3xl sm:text-4xl font-black text-slate-900">
+            Flip Through Our Story
+          </h2>
+          <p class="text-sm text-slate-600">
+            Click the book buttons below to watch realistic 3D pages turn and explore our classrooms!
+          </p>
+        </div>
+
+        <div class="book-scene max-w-4xl mx-auto reveal-zoom">
           
           <div id="storybookContainer" class="book-container">
             
             <!-- PAGE 0: COVER -->
             <div class="book-page z-30" id="bookPage0">
               <div class="book-spine-shadow"></div>
-              <div class="h-full bg-gradient-to-br from-sprout-800 via-sprout-700 to-sprout-800 text-white p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden">
-                <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full border-4 border-sunny-400/20 pointer-events-none"></div>
+              <div class="h-full bg-gradient-to-br from-tle-purple via-[#8B2FA3] to-tle-purple text-white p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full border-4 border-tle-yellow/20 pointer-events-none"></div>
 
                 <div class="space-y-3">
-                  <div class="flex items-center gap-2 text-sunny-300 text-xs font-bold uppercase tracking-widest">
-                    <span>★</span> An Adventure in Learning
+                  <div class="flex items-center gap-2 text-tle-yellow text-xs font-black uppercase tracking-widest">
+                    <span>★</span> Welcome to Here We Grow Daycare
                   </div>
                   <h3 class="font-serif text-3xl sm:text-4xl font-bold leading-tight">
-                    Where Little Sprouts Grow Big & Confident.
+                    Where Happy Days &amp; Bright Futures Begin.
                   </h3>
-                  <p class="text-sm text-sprout-100 max-w-md">
+                  <p class="text-sm text-purple-100 max-w-md">
                     Premier play-based childcare and early education for ages 1 month to 5 years in Pembroke and Randolph, MA.
                   </p>
                 </div>
 
-                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-6 border-t border-sprout-600">
-                  <button onclick="flipPage(0)" class="px-6 py-3 rounded-xl font-heading font-bold text-xs bg-sunny-400 text-slate-900 hover:bg-sunny-300 shadow-lg transition flex items-center gap-2">
-                    Open Storybook & Flip Pages <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-6 border-t border-purple-400/40">
+                  <button onclick="flipPage(0)" class="px-7 py-3.5 rounded-full font-heading font-black text-xs bg-tle-yellow text-slate-900 hover:bg-amber-300 shadow-lg transition flex items-center gap-2">
+                    Open Storybook &amp; Flip Pages <i data-lucide="arrow-right" class="w-4 h-4"></i>
                   </button>
-                  <span class="text-xs text-sprout-200 font-medium">Click to turn page →</span>
+                  <span class="text-xs text-purple-200 font-medium">Click to turn page →</span>
                 </div>
               </div>
             </div>
@@ -347,26 +464,26 @@
               <div class="book-spine-shadow"></div>
               <div class="grid grid-cols-1 md:grid-cols-2 h-full">
                 <div class="h-48 md:h-full">
-                  <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800&auto=format&fit=crop&q=80" alt="Infant Room" class="w-full h-full object-cover" />
+                  <img src="https://images.unsplash.com/photo-1566004100631-35d015d6a491?w=800&auto=format&fit=crop&q=80" alt="Smiling baby in nursery" class="w-full h-full object-cover" />
                 </div>
                 <div class="p-6 sm:p-8 flex flex-col justify-between bg-white space-y-4">
                   <div class="space-y-3">
                     <div class="flex items-center justify-between">
-                      <span class="text-xs font-extrabold uppercase text-sprout-700 tracking-wider">Chapter 1 &bull; 1–24 Mo</span>
-                      <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-sprout-100 text-sprout-800">1:4 Ratio</span>
+                      <span class="text-xs font-black uppercase text-tle-purple tracking-wider">Chapter 1 &bull; 1–24 Mo</span>
+                      <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-purple-100 text-tle-purple">1:4 Low Ratio</span>
                     </div>
-                    <h4 class="font-serif text-2xl font-bold text-slate-900">Gentle Beginnings</h4>
+                    <h4 class="font-serif text-2xl font-bold text-slate-900">Gentle Infant Care</h4>
                     <p class="text-xs text-slate-600 leading-relaxed">
-                      Individualized sleep and feeding schedules, warm holding, tummy time, and <strong>Baby Sign Language</strong> to empower communication before speech.
+                      Individualized sleep and bottle schedules, warm holding, tummy time, and <strong>Baby Sign Language</strong> to empower communication before speech.
                     </p>
                     <div class="space-y-1 text-xs text-slate-700 font-medium">
-                      <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sprout-600"></i> Individual cribs & sleep cycles</div>
-                      <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sprout-600"></i> Real-time parent photo updates</div>
+                      <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-tle-cyan"></i> Individual cribs &amp; peaceful sleep</div>
+                      <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-tle-cyan"></i> Real-time parent photo updates</div>
                     </div>
                   </div>
                   <div class="flex items-center justify-between pt-3 border-t border-stone-100">
                     <button onclick="unflipPage(0)" class="text-xs font-bold text-slate-500 hover:text-slate-900">← Back</button>
-                    <button onclick="flipPage(1)" class="px-4 py-2 rounded-xl text-xs font-bold bg-sprout-600 text-white hover:bg-sprout-700 transition flex items-center gap-1">
+                    <button onclick="flipPage(1)" class="px-5 py-2.5 rounded-full text-xs font-extrabold bg-tle-cyan text-white hover:bg-tle-cyandark transition flex items-center gap-1">
                       Next Chapter →
                     </button>
                   </div>
@@ -379,26 +496,26 @@
               <div class="book-spine-shadow"></div>
               <div class="grid grid-cols-1 md:grid-cols-2 h-full">
                 <div class="h-48 md:h-full">
-                  <img src="https://images.unsplash.com/photo-1596496050827-8299e0220de1?w=800&auto=format&fit=crop&q=80" alt="Preschool STEAM" class="w-full h-full object-cover" />
+                  <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=800&auto=format&fit=crop&q=80" alt="Children drawing in classroom" class="w-full h-full object-cover" />
                 </div>
                 <div class="p-6 sm:p-8 flex flex-col justify-between bg-white space-y-4">
                   <div class="space-y-3">
                     <div class="flex items-center justify-between">
-                      <span class="text-xs font-extrabold uppercase text-sprout-700 tracking-wider">Chapter 2 &bull; 2–5 Yrs</span>
-                      <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-sunny-100 text-sunny-800">Kindergarten Ready</span>
+                      <span class="text-xs font-black uppercase text-tle-purple tracking-wider">Chapter 2 &bull; 2–5 Yrs</span>
+                      <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-100 text-amber-800">Kindergarten Ready</span>
                     </div>
-                    <h4 class="font-serif text-2xl font-bold text-slate-900">Wonder & STEAM</h4>
+                    <h4 class="font-serif text-2xl font-bold text-slate-900">Preschool Discovery &amp; STEAM</h4>
                     <p class="text-xs text-slate-600 leading-relaxed">
-                      Hands-on science experiments, letter phonics, early math counting, and creative art stations that build lifelong problem-solving confidence.
+                      Hands-on science experiments, phonics letter sounds, counting games, and creative art stations that build lifelong confidence.
                     </p>
                     <div class="space-y-1 text-xs text-slate-700 font-medium">
-                      <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sprout-600"></i> Phonics & writing full name</div>
-                      <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sprout-600"></i> Safe science & water labs</div>
+                      <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-tle-cyan"></i> Phonics &amp; writing full name</div>
+                      <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-tle-cyan"></i> Safe science &amp; water tables</div>
                     </div>
                   </div>
                   <div class="flex items-center justify-between pt-3 border-t border-stone-100">
                     <button onclick="unflipPage(1)" class="text-xs font-bold text-slate-500 hover:text-slate-900">← Back</button>
-                    <button onclick="flipPage(2)" class="px-4 py-2 rounded-xl text-xs font-bold bg-sprout-600 text-white hover:bg-sprout-700 transition flex items-center gap-1">
+                    <button onclick="flipPage(2)" class="px-5 py-2.5 rounded-full text-xs font-extrabold bg-tle-cyan text-white hover:bg-tle-cyandark transition flex items-center gap-1">
                       Next Chapter →
                     </button>
                   </div>
@@ -406,31 +523,31 @@
               </div>
             </div>
 
-            <!-- PAGE 3: CHAPTER 3 - DAILY CARE & YARDS -->
+            <!-- PAGE 3: CHAPTER 3 - DAILY CARE & PLAYGROUNDS -->
             <div class="book-page z-0" id="bookPage3">
               <div class="book-spine-shadow"></div>
               <div class="grid grid-cols-1 md:grid-cols-2 h-full">
                 <div class="h-48 md:h-full">
-                  <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=800&auto=format&fit=crop&q=80" alt="Outdoor Play Yard" class="w-full h-full object-cover" />
+                  <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&auto=format&fit=crop&q=80" alt="Smiling girl outdoors" class="w-full h-full object-cover" />
                 </div>
                 <div class="p-6 sm:p-8 flex flex-col justify-between bg-white space-y-4">
                   <div class="space-y-3">
                     <div class="flex items-center justify-between">
-                      <span class="text-xs font-extrabold uppercase text-sprout-700 tracking-wider">Chapter 3 &bull; Daily Care</span>
-                      <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-sprout-100 text-sprout-800">7:00 AM – 5:30 PM</span>
+                      <span class="text-xs font-black uppercase text-tle-purple tracking-wider">Chapter 3 &bull; Daily Care</span>
+                      <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-purple-100 text-tle-purple">7:00 AM – 5:30 PM</span>
                     </div>
-                    <h4 class="font-serif text-2xl font-bold text-slate-900">Wholesome Meals & Safe Yards</h4>
+                    <h4 class="font-serif text-2xl font-bold text-slate-900">Hot Meals &amp; Safe Playgrounds</h4>
                     <p class="text-xs text-slate-600 leading-relaxed">
-                      Warm hot breakfast and organic snacks provided daily, combined with spacious fenced outdoor play yards and sanitized cots.
+                      Warm hot breakfast and healthy snacks provided daily, combined with spacious fenced outdoor playgrounds and sanitized cots.
                     </p>
                     <div class="space-y-1 text-xs text-slate-700 font-medium">
-                      <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sprout-600"></i> Hot breakfast & snacks included</div>
-                      <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sprout-600"></i> Secure fenced outdoor yards</div>
+                      <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-tle-cyan"></i> Hot breakfast &amp; snacks included</div>
+                      <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-tle-cyan"></i> Secure fenced outdoor playgrounds</div>
                     </div>
                   </div>
                   <div class="flex items-center justify-between pt-3 border-t border-stone-100">
                     <button onclick="unflipPage(2)" class="text-xs font-bold text-slate-500 hover:text-slate-900">← Back</button>
-                    <button onclick="openTourModal('Any'); triggerConfetti();" class="px-4 py-2 rounded-xl text-xs font-bold bg-sunny-500 text-slate-900 hover:bg-sunny-400 transition flex items-center gap-1 shadow">
+                    <button onclick="openTourModal('Any'); triggerConfetti();" class="px-5 py-2.5 rounded-full text-xs font-black bg-tle-yellow text-slate-900 hover:bg-amber-300 transition flex items-center gap-1 shadow">
                       🎉 Book Tour ($50 Credit)
                     </button>
                   </div>
@@ -442,10 +559,10 @@
 
           <!-- Page Indicator Dots -->
           <div class="flex items-center justify-center gap-3 mt-6">
-            <button onclick="goToBookPage(0)" id="dot0" class="w-3 h-3 rounded-full bg-sprout-600 transition scale-125"></button>
-            <button onclick="goToBookPage(1)" id="dot1" class="w-3 h-3 rounded-full bg-stone-300 transition"></button>
-            <button onclick="goToBookPage(2)" id="dot2" class="w-3 h-3 rounded-full bg-stone-300 transition"></button>
-            <button onclick="goToBookPage(3)" id="dot3" class="w-3 h-3 rounded-full bg-stone-300 transition"></button>
+            <button onclick="goToBookPage(0)" id="dot0" class="w-3.5 h-3.5 rounded-full bg-tle-purple transition scale-125"></button>
+            <button onclick="goToBookPage(1)" id="dot1" class="w-3.5 h-3.5 rounded-full bg-stone-300 transition"></button>
+            <button onclick="goToBookPage(2)" id="dot2" class="w-3.5 h-3.5 rounded-full bg-stone-300 transition"></button>
+            <button onclick="goToBookPage(3)" id="dot3" class="w-3.5 h-3.5 rounded-full bg-stone-300 transition"></button>
           </div>
 
         </div>
@@ -453,56 +570,56 @@
       </div>
     </section>
 
-    <!-- ================= CAMPUS SELECTOR & TRUST BANNER ================= -->
-    <section class="py-8 bg-[#FAF8F5] border-b border-stone-200">
+    <!-- ================= CAMPUS LOCATIONS ================= -->
+    <section id="campuses" class="py-12 bg-white border-b border-stone-100">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           
           <!-- Pembroke Campus Card -->
-          <div class="bg-gradient-to-br from-sprout-50/60 to-white p-6 rounded-3xl border-2 border-sprout-200 hover:border-sprout-500 hover:shadow-lg transition flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div class="bg-gradient-to-br from-sky-50 to-white p-6 rounded-[32px] border-2 border-sky-100 hover:border-tle-cyan hover:shadow-lg transition flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 reveal-slide-left">
             <div class="space-y-1">
               <div class="flex items-center gap-2">
-                <span class="text-lg">🏫</span>
-                <h3 class="font-heading font-bold text-lg text-slate-900">Pembroke Campus</h3>
-                <span class="text-[10px] font-extrabold uppercase bg-sprout-200 text-sprout-800 px-2 py-0.5 rounded-md">6 Suites</span>
+                <span class="text-xl">🏫</span>
+                <h3 class="font-heading font-black text-lg text-slate-900">Pembroke Campus</h3>
+                <span class="text-[10px] font-extrabold uppercase bg-sky-100 text-tle-cyandark px-2.5 py-0.5 rounded-full">6 Suites</span>
               </div>
               <p class="text-xs text-slate-600 flex items-center gap-1">
-                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-sprout-600 shrink-0"></i> 55 Corporate Park Dr, Pembroke, MA 02359
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-tle-cyan shrink-0"></i> 55 Corporate Park Dr, Pembroke, MA 02359
               </p>
               <p class="text-xs font-semibold text-slate-500">
                 Ages: 1 Month – 5 Years &bull; Hours: 7:00 AM – 5:30 PM
               </p>
             </div>
             <div class="flex sm:flex-col gap-2 w-full sm:w-auto">
-              <a href="tel:7818261900" class="flex-1 sm:flex-none px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-stone-200 hover:bg-stone-50 text-center transition">
+              <a href="tel:7818261900" class="flex-1 sm:flex-none px-4 py-2.5 rounded-full text-xs font-bold bg-white text-slate-700 border border-stone-200 hover:bg-stone-50 text-center transition">
                 📞 (781) 826-1900
               </a>
-              <button onclick="openTourModal('Pembroke')" class="flex-1 sm:flex-none px-4 py-2 rounded-xl text-xs font-bold bg-sprout-600 text-white hover:bg-sprout-700 text-center transition">
+              <button onclick="openTourModal('Pembroke')" class="flex-1 sm:flex-none px-5 py-2.5 rounded-full text-xs font-extrabold bg-tle-cyan text-white hover:bg-tle-cyandark text-center transition shadow-md shadow-tle-cyan/20">
                 Book Pembroke Tour
               </button>
             </div>
           </div>
 
           <!-- Randolph Campus Card -->
-          <div class="bg-gradient-to-br from-sunny-50/60 to-white p-6 rounded-3xl border-2 border-sunny-200 hover:border-sunny-500 hover:shadow-lg transition flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div class="bg-gradient-to-br from-purple-50 to-white p-6 rounded-[32px] border-2 border-purple-100 hover:border-tle-purple hover:shadow-lg transition flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 reveal-slide-right">
             <div class="space-y-1">
               <div class="flex items-center gap-2">
-                <span class="text-lg">🏫</span>
-                <h3 class="font-heading font-bold text-lg text-slate-900">Randolph Campus</h3>
-                <span class="text-[10px] font-extrabold uppercase bg-sunny-200 text-sunny-800 px-2 py-0.5 rounded-md">6 Suites</span>
+                <span class="text-xl">🏫</span>
+                <h3 class="font-heading font-black text-lg text-slate-900">Randolph Campus</h3>
+                <span class="text-[10px] font-extrabold uppercase bg-purple-100 text-tle-purple px-2.5 py-0.5 rounded-full">6 Suites</span>
               </div>
               <p class="text-xs text-slate-600 flex items-center gap-1">
-                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-sunny-600 shrink-0"></i> 716 N Main St, Randolph, MA 02368
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-tle-purple shrink-0"></i> 716 N Main St, Randolph, MA 02368
               </p>
               <p class="text-xs font-semibold text-slate-500">
                 Ages: 1 Month – 5 Years &bull; Hours: 7:00 AM – 5:30 PM
               </p>
             </div>
             <div class="flex sm:flex-col gap-2 w-full sm:w-auto">
-              <a href="tel:7819614488" class="flex-1 sm:flex-none px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-stone-200 hover:bg-stone-50 text-center transition">
+              <a href="tel:7819614488" class="flex-1 sm:flex-none px-4 py-2.5 rounded-full text-xs font-bold bg-white text-slate-700 border border-stone-200 hover:bg-stone-50 text-center transition">
                 📞 (781) 961-4488
               </a>
-              <button onclick="openTourModal('Randolph')" class="flex-1 sm:flex-none px-4 py-2 rounded-xl text-xs font-bold bg-sunny-500 text-slate-900 hover:bg-sunny-600 text-center transition">
+              <button onclick="openTourModal('Randolph')" class="flex-1 sm:flex-none px-5 py-2.5 rounded-full text-xs font-extrabold bg-tle-purple text-white hover:bg-tle-purpledark text-center transition shadow-md shadow-tle-purple/20">
                 Book Randolph Tour
               </button>
             </div>
@@ -513,27 +630,26 @@
     </section>
 
     <!-- ================= INTERACTIVE AGE EXPLORER SLIDER ================= -->
-    <section id="age-explorer" class="py-20 bg-white">
+    <section id="age-explorer" class="py-20 bg-[#EAF5FC]">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sprout-100 text-sprout-800 text-xs font-bold uppercase tracking-wider">
-            <span>👶</span> Tailored for Every Developmental Stage
+        <div class="text-center max-w-3xl mx-auto mb-12 space-y-3 reveal">
+          <div class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white text-tle-purple font-black text-xs uppercase tracking-wider shadow-sm">
+            <span>👶</span> Dedicated Classroom Suites
           </div>
-          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900">
+          <h2 class="font-heading text-3xl sm:text-4xl font-black text-slate-900">
             Interactive Classroom Explorer
           </h2>
           <p class="text-base text-slate-600">
-            Drag the slider to your child's age to see their dedicated classroom suite, teacher ratios, and milestones!
+            Drag the slider to your child's age to see their dedicated classroom, teacher ratios, and milestones!
           </p>
         </div>
 
-        <!-- Slider Control Bar -->
-        <div class="bg-[#FAF8F5] p-6 sm:p-8 rounded-3xl shadow-sm border border-stone-200/80 mb-8 max-w-4xl mx-auto">
+        <div class="bg-white p-6 sm:p-8 rounded-[32px] shadow-sm border border-sky-100 mb-8 max-w-4xl mx-auto reveal-zoom">
           <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-4">
             <label for="ageSliderInput" class="text-sm font-bold text-slate-800 flex items-center gap-2">
-              <span class="w-8 h-8 rounded-full bg-sprout-100 text-sprout-700 flex items-center justify-center font-bold text-sm">🎯</span>
-              Selected Age: <span id="sliderAgeDisplay" class="text-sprout-600 text-base font-extrabold font-heading">18 Months (Toddler 1)</span>
+              <span class="w-8 h-8 rounded-full bg-tle-cyanlight text-tle-cyan flex items-center justify-center font-bold text-sm">🎯</span>
+              Selected Age: <span id="sliderAgeDisplay" class="text-tle-purple text-base font-black font-heading">18 Months (Toddler 1)</span>
             </label>
             <span class="text-xs text-slate-500">Range: 1 Month to 5 Years (60 Months)</span>
           </div>
@@ -558,14 +674,13 @@
           </div>
         </div>
 
-        <!-- Dynamic Classroom Display Card -->
-        <div class="bg-[#FAF8F5] rounded-3xl shadow-md border border-stone-200/80 overflow-hidden max-w-5xl mx-auto transition-all duration-300">
+        <div class="bg-white rounded-[36px] shadow-lg border border-sky-100 overflow-hidden max-w-5xl mx-auto transition-all duration-300 reveal">
           <div class="grid grid-cols-1 lg:grid-cols-12">
             
             <div class="lg:col-span-5 relative min-h-[280px] lg:min-h-[380px]">
-              <img id="classroomImage" src="https://images.unsplash.com/photo-1544717302-de2939b7ef71?w=800&auto=format&fit=crop&q=80" alt="Classroom preview" class="w-full h-full object-cover" />
-              <div class="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-xl flex items-center gap-1.5 shadow">
-                <i data-lucide="tag" class="w-3.5 h-3.5 text-sprout-400"></i>
+              <img id="classroomImage" src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800&auto=format&fit=crop&q=80" alt="Cute toddler in classroom" class="w-full h-full object-cover" />
+              <div class="absolute top-4 left-4 bg-slate-900/85 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-xl flex items-center gap-1.5 shadow">
+                <i data-lucide="tag" class="w-3.5 h-3.5 text-tle-yellow"></i>
                 <span id="classroomBadgeTag">Toddler Discovery Suite</span>
               </div>
             </div>
@@ -574,16 +689,16 @@
               
               <div class="space-y-3">
                 <div class="flex flex-wrap items-center gap-2">
-                  <span id="classroomRatio" class="px-3 py-1 rounded-full text-xs font-extrabold bg-sprout-100 text-sprout-800 border border-sprout-200">
+                  <span id="classroomRatio" class="px-3.5 py-1 rounded-full text-xs font-extrabold bg-purple-100 text-tle-purple border border-purple-200">
                     1:4 Low Ratio &bull; Hands-on Sensory Play
                   </span>
-                  <span class="px-3 py-1 rounded-full text-xs font-bold bg-sunny-100 text-sunny-800 border border-sunny-200">
+                  <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-200">
                     Dedicated Room
                   </span>
                 </div>
 
-                <h3 id="classroomTitle" class="font-heading text-2xl sm:text-3xl font-bold text-slate-900">
-                  Toddler Discovery & First Words Room
+                <h3 id="classroomTitle" class="font-heading text-2xl sm:text-3xl font-black text-slate-900">
+                  Toddler Discovery &amp; First Words Room
                 </h3>
 
                 <p id="classroomDescription" class="text-sm text-slate-600 leading-relaxed">
@@ -591,37 +706,35 @@
                 </p>
               </div>
 
-              <!-- Milestones Grid -->
-              <div class="bg-white p-4 rounded-2xl border border-stone-200/80">
-                <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+              <div class="bg-slate-50 p-4 rounded-2xl border border-stone-200/80">
+                <h4 class="text-xs font-extrabold text-slate-800 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
                   <span>🎯</span> Key Developmental Milestones Achieved:
                 </h4>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700">
                   <div class="flex items-start gap-2 font-medium">
-                    <i data-lucide="check-circle-2" class="w-4 h-4 text-sprout-600 shrink-0 mt-0.5"></i>
-                    <span id="milestone1">First 50+ words & two-word phrases</span>
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-tle-cyan shrink-0 mt-0.5"></i>
+                    <span id="milestone1">First 50+ words &amp; two-word phrases</span>
                   </div>
                   <div class="flex items-start gap-2 font-medium">
-                    <i data-lucide="check-circle-2" class="w-4 h-4 text-sprout-600 shrink-0 mt-0.5"></i>
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-tle-cyan shrink-0 mt-0.5"></i>
                     <span id="milestone2">Early potty-training partnership</span>
                   </div>
                   <div class="flex items-start gap-2 font-medium">
-                    <i data-lucide="check-circle-2" class="w-4 h-4 text-sprout-600 shrink-0 mt-0.5"></i>
-                    <span id="milestone3">Fine motor stacking & block building</span>
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-tle-cyan shrink-0 mt-0.5"></i>
+                    <span id="milestone3">Fine motor stacking &amp; block building</span>
                   </div>
                   <div class="flex items-start gap-2 font-medium">
-                    <i data-lucide="check-circle-2" class="w-4 h-4 text-sprout-600 shrink-0 mt-0.5"></i>
-                    <span id="milestone4">Daily music, rhythm sticks & dance</span>
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-tle-cyan shrink-0 mt-0.5"></i>
+                    <span id="milestone4">Daily music, rhythm sticks &amp; dance</span>
                   </div>
                 </div>
               </div>
 
-              <!-- Room Tour CTA -->
               <div class="flex items-center justify-between pt-2">
-                <div class="text-xs text-slate-500">
+                <div class="text-xs text-slate-500 font-semibold">
                   ⚡ <strong>Limited spots</strong> available this semester
                 </div>
-                <button id="bookSpecificRoomBtn" onclick="openTourModal('Any', 'Toddler')" class="px-5 py-2.5 rounded-xl font-heading font-bold text-xs bg-sprout-600 text-white hover:bg-sprout-700 shadow-md transition flex items-center gap-1.5">
+                <button id="bookSpecificRoomBtn" onclick="openTourModal('Any', 'Toddler')" class="px-6 py-2.5 rounded-full font-heading font-black text-xs bg-tle-cyan text-white hover:bg-tle-cyandark shadow-md transition flex items-center gap-1.5">
                   <i data-lucide="calendar" class="w-4 h-4"></i> Tour This Room
                 </button>
               </div>
@@ -634,93 +747,89 @@
       </div>
     </section>
 
-    <!-- ================= WONDER & GROW™ CURRICULUM ================= -->
-    <section id="curriculum" class="py-20 bg-[#FAF8F5] border-t border-stone-200">
+    <!-- ================= LEARNING PILLARS ================= -->
+    <section id="curriculum" class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-sunny-100 text-sunny-800 text-xs font-bold uppercase tracking-wider">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3 reveal">
+          <div class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-amber-100 text-amber-800 text-xs font-black uppercase tracking-wider">
             <span>✨</span> Whole-Child Educational Framework
           </div>
-          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900">
-            The Wonder & Grow™ Curriculum
+          <h2 class="font-heading text-3xl sm:text-4xl font-black text-slate-900">
+            Our 4 Core Learning Pillars
           </h2>
           <p class="text-base text-slate-600">
-            Inspired by early learning neuroscience, our 4-pillar approach nurtures intellectual curiosity, social empathy, and joyful discovery.
+            Play-based early learning designed to nurture intellectual curiosity, social empathy, and joyful discovery.
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-          <!-- Pillar 1 -->
-          <div class="bg-gradient-to-b from-skybrand-50/60 to-white p-6 rounded-3xl border-2 border-skybrand-100 hover:border-skybrand-400 hover:shadow-xl transition duration-300 space-y-4 flex flex-col justify-between">
+          <div class="bg-gradient-to-b from-sky-50 to-white p-6 rounded-[32px] border-2 border-sky-100 hover:border-tle-cyan hover:shadow-xl transition duration-300 space-y-4 flex flex-col justify-between reveal stagger-1">
             <div class="space-y-3">
-              <div class="w-12 h-12 rounded-2xl bg-skybrand-500 text-white flex items-center justify-center text-2xl shadow-md shadow-skybrand-500/20">
+              <div class="w-12 h-12 rounded-2xl bg-tle-cyan text-white flex items-center justify-center text-2xl shadow-md shadow-sky-400/30">
                 🔤
               </div>
-              <h3 class="font-heading font-bold text-xl text-slate-900">Little Linguists</h3>
+              <h3 class="font-heading font-black text-xl text-slate-900">Little Readers &amp; Phonics</h3>
               <p class="text-xs text-slate-600 leading-relaxed">
-                Early phonics, storybook circles, rich conversational vocabulary, and <strong>Baby Sign Language</strong> to empower young toddlers before speech.
+                Early letter sounds, storybook circles, rich conversational vocabulary, and <strong>Baby Sign Language</strong> to empower young toddlers before speech.
               </p>
             </div>
             <ul class="text-xs text-slate-600 space-y-2 pt-2 border-t border-stone-100 font-medium">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-skybrand-600"></i> Baby Sign Language</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-skybrand-600"></i> Letter Sounds & Phonics</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-skybrand-600"></i> Daily Read-Aloud Circles</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-tle-cyan"></i> Baby Sign Language</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-tle-cyan"></i> Letter Sounds &amp; Phonics</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-tle-cyan"></i> Daily Read-Aloud Circles</li>
             </ul>
           </div>
 
-          <!-- Pillar 2 -->
-          <div class="bg-gradient-to-b from-sprout-50/60 to-white p-6 rounded-3xl border-2 border-sprout-100 hover:border-sprout-400 hover:shadow-xl transition duration-300 space-y-4 flex flex-col justify-between">
+          <div class="bg-gradient-to-b from-amber-50 to-white p-6 rounded-[32px] border-2 border-amber-100 hover:border-tle-yellow hover:shadow-xl transition duration-300 space-y-4 flex flex-col justify-between reveal stagger-2">
             <div class="space-y-3">
-              <div class="w-12 h-12 rounded-2xl bg-sprout-500 text-white flex items-center justify-center text-2xl shadow-md shadow-sprout-500/20">
+              <div class="w-12 h-12 rounded-2xl bg-tle-yellow text-slate-900 flex items-center justify-center text-2xl shadow-md shadow-amber-400/30">
                 🔬
               </div>
-              <h3 class="font-heading font-bold text-xl text-slate-900">Tiny Innovators</h3>
+              <h3 class="font-heading font-black text-xl text-slate-900">Early STEAM Explorers</h3>
               <p class="text-xs text-slate-600 leading-relaxed">
-                Hands-on STEM labs with water physics tables, magnetic engineering tiles, counting games, bug observation, and color-mixing experiments.
+                Hands-on discovery with water physics tables, magnetic engineering tiles, counting games, color mixing, and nature observation.
               </p>
             </div>
             <ul class="text-xs text-slate-600 space-y-2 pt-2 border-t border-stone-100 font-medium">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sprout-600"></i> Water & Sand Physics</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sprout-600"></i> Patterning & Math Counting</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sprout-600"></i> Nature & Gardening Beds</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600"></i> Water &amp; Sand Physics</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600"></i> Patterning &amp; Math Counting</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600"></i> Hands-on Science Tables</li>
             </ul>
           </div>
 
-          <!-- Pillar 3 -->
-          <div class="bg-gradient-to-b from-coral-50/60 to-white p-6 rounded-3xl border-2 border-coral-100 hover:border-coral-400 hover:shadow-xl transition duration-300 space-y-4 flex flex-col justify-between">
+          <div class="bg-gradient-to-b from-pink-50 to-white p-6 rounded-[32px] border-2 border-pink-100 hover:border-tle-coral hover:shadow-xl transition duration-300 space-y-4 flex flex-col justify-between reveal stagger-3">
             <div class="space-y-3">
-              <div class="w-12 h-12 rounded-2xl bg-coral-500 text-white flex items-center justify-center text-2xl shadow-md shadow-coral-500/20">
+              <div class="w-12 h-12 rounded-2xl bg-tle-coral text-white flex items-center justify-center text-2xl shadow-md shadow-pink-400/30">
                 🎨
               </div>
-              <h3 class="font-heading font-bold text-xl text-slate-900">Creative Explorers</h3>
+              <h3 class="font-heading font-black text-xl text-slate-900">Little Artists &amp; Music</h3>
               <p class="text-xs text-slate-600 leading-relaxed">
-                Unstructured artistic expression featuring finger painting, clay sculpting, musical rhythm sticks, dance, and dramatic pretend play.
+                Joyful artistic expression featuring finger painting, clay sculpting, musical rhythm sticks, cheerful sing-alongs, and pretend play.
               </p>
             </div>
             <ul class="text-xs text-slate-600 space-y-2 pt-2 border-t border-stone-100 font-medium">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-coral-600"></i> Messy Sensory Jars</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-coral-600"></i> Music & Rhythm Dance</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-coral-600"></i> Costume Pretend Play</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-tle-coral"></i> Sensory Art &amp; Finger Paint</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-tle-coral"></i> Music &amp; Rhythm Dance</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-tle-coral"></i> Costume Pretend Play</li>
             </ul>
           </div>
 
-          <!-- Pillar 4 -->
-          <div class="bg-gradient-to-b from-sunny-50/60 to-white p-6 rounded-3xl border-2 border-sunny-100 hover:border-sunny-400 hover:shadow-xl transition duration-300 space-y-4 flex flex-col justify-between">
+          <div class="bg-gradient-to-b from-purple-50 to-white p-6 rounded-[32px] border-2 border-purple-100 hover:border-tle-purple hover:shadow-xl transition duration-300 space-y-4 flex flex-col justify-between reveal stagger-4">
             <div class="space-y-3">
-              <div class="w-12 h-12 rounded-2xl bg-sunny-500 text-white flex items-center justify-center text-2xl shadow-md shadow-sunny-500/20">
+              <div class="w-12 h-12 rounded-2xl bg-tle-purple text-white flex items-center justify-center text-2xl shadow-md shadow-purple-400/30">
                 💛
               </div>
-              <h3 class="font-heading font-bold text-xl text-slate-900">Kind Hearts & Feelings</h3>
+              <h3 class="font-heading font-black text-xl text-slate-900">Kindness &amp; Friendship</h3>
               <p class="text-xs text-slate-600 leading-relaxed">
                 Character development focusing on empathy, sharing routines, emotion naming using our "Feelings Wheel", and making first best friends.
               </p>
             </div>
             <ul class="text-xs text-slate-600 space-y-2 pt-2 border-t border-stone-100 font-medium">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sunny-600"></i> Gentle Conflict Resolution</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sunny-600"></i> Sharing & Turn-Taking</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-sunny-600"></i> Self-Regulation Tools</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-tle-purple"></i> Gentle Conflict Resolution</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-tle-purple"></i> Sharing &amp; Turn-Taking</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-tle-purple"></i> Self-Regulation Tools</li>
             </ul>
           </div>
 
@@ -730,68 +839,65 @@
     </section>
 
     <!-- ================= "A DAY IN THE LIFE" INTERACTIVE TIMELINE ================= -->
-    <section id="daily-rhythm" class="py-20 bg-white">
+    <section id="daily-rhythm" class="py-20 bg-[#FAF9F6] border-t border-stone-200">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sprout-100 text-sprout-800 text-xs font-bold uppercase tracking-wider">
+        <div class="text-center max-w-3xl mx-auto mb-12 space-y-3 reveal">
+          <div class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-tle-cyanlight text-tle-cyan font-black text-xs uppercase tracking-wider">
             <span>⏰</span> Predictable, Joyful Routine
           </div>
-          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900">
+          <h2 class="font-heading text-3xl sm:text-4xl font-black text-slate-900">
             A Day in the Life at Here We Grow
           </h2>
           <p class="text-base text-slate-600">
-            Click any time slot below to explore the schedule and see what your child experiences!
+            Click any time slot below to explore the schedule and see what children experience!
           </p>
         </div>
 
-        <!-- Horizontal Time Navigation Pills -->
-        <div class="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar">
-          <button onclick="selectTimeline(0)" class="timeline-btn active shrink-0 px-4 py-2.5 rounded-2xl text-xs font-extrabold bg-sprout-600 text-white shadow transition flex items-center gap-1.5">
+        <div class="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar reveal">
+          <button onclick="selectTimeline(0)" class="timeline-btn active shrink-0 px-5 py-3 rounded-full text-xs font-black bg-tle-cyan text-white shadow transition flex items-center gap-1.5">
             <span>🌅</span> 7:30 AM Arrival
           </button>
-          <button onclick="selectTimeline(1)" class="timeline-btn shrink-0 px-4 py-2.5 rounded-2xl text-xs font-extrabold bg-white text-slate-700 border border-stone-200 hover:bg-stone-50 transition flex items-center gap-1.5">
+          <button onclick="selectTimeline(1)" class="timeline-btn shrink-0 px-5 py-3 rounded-full text-xs font-black bg-white text-slate-700 border border-stone-200 hover:bg-stone-50 transition flex items-center gap-1.5">
             <span>🎵</span> 9:00 AM Circle Time
           </button>
-          <button onclick="selectTimeline(2)" class="timeline-btn shrink-0 px-4 py-2.5 rounded-2xl text-xs font-extrabold bg-white text-slate-700 border border-stone-200 hover:bg-stone-50 transition flex items-center gap-1.5">
+          <button onclick="selectTimeline(2)" class="timeline-btn shrink-0 px-5 py-3 rounded-full text-xs font-black bg-white text-slate-700 border border-stone-200 hover:bg-stone-50 transition flex items-center gap-1.5">
             <span>🔬</span> 10:15 AM STEAM
           </button>
-          <button onclick="selectTimeline(3)" class="timeline-btn shrink-0 px-4 py-2.5 rounded-2xl text-xs font-extrabold bg-white text-slate-700 border border-stone-200 hover:bg-stone-50 transition flex items-center gap-1.5">
+          <button onclick="selectTimeline(3)" class="timeline-btn shrink-0 px-5 py-3 rounded-full text-xs font-black bg-white text-slate-700 border border-stone-200 hover:bg-stone-50 transition flex items-center gap-1.5">
             <span>🍎</span> 11:30 AM Lunch
           </button>
-          <button onclick="selectTimeline(4)" class="timeline-btn shrink-0 px-4 py-2.5 rounded-2xl text-xs font-extrabold bg-white text-slate-700 border border-stone-200 hover:bg-stone-50 transition flex items-center gap-1.5">
+          <button onclick="selectTimeline(4)" class="timeline-btn shrink-0 px-5 py-3 rounded-full text-xs font-black bg-white text-slate-700 border border-stone-200 hover:bg-stone-50 transition flex items-center gap-1.5">
             <span>😴</span> 12:30 PM Nap
           </button>
-          <button onclick="selectTimeline(5)" class="timeline-btn shrink-0 px-4 py-2.5 rounded-2xl text-xs font-extrabold bg-white text-slate-700 border border-stone-200 hover:bg-stone-50 transition flex items-center gap-1.5">
-            <span>🌳</span> 3:00 PM Yard & Pick-up
+          <button onclick="selectTimeline(5)" class="timeline-btn shrink-0 px-5 py-3 rounded-full text-xs font-black bg-white text-slate-700 border border-stone-200 hover:bg-stone-50 transition flex items-center gap-1.5">
+            <span>☀️</span> 3:00 PM Playground
           </button>
         </div>
 
-        <!-- Schedule Preview Card -->
-        <div class="bg-[#FAF8F5] rounded-3xl p-6 sm:p-8 shadow-md border border-stone-200/80 max-w-4xl mx-auto">
+        <div class="bg-white rounded-[36px] p-6 sm:p-8 shadow-lg border border-stone-200 max-w-4xl mx-auto reveal-zoom">
           <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             
             <div class="md:col-span-5 relative rounded-2xl overflow-hidden shadow aspect-[4/3]">
-              <img id="timelineImg" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop&q=80" alt="Daily activity preview" class="w-full h-full object-cover" />
-              <div id="timelineBadge" class="absolute top-3 left-3 bg-sprout-600 text-white text-[11px] font-extrabold px-3 py-1 rounded-full shadow">
+              <img id="timelineImg" src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800&auto=format&fit=crop&q=80" alt="Cute toddler in circle time" class="w-full h-full object-cover" />
+              <div id="timelineBadge" class="absolute top-3 left-3 bg-tle-cyan text-white text-[11px] font-black px-3.5 py-1 rounded-full shadow">
                 7:30 AM – 8:30 AM
               </div>
             </div>
 
             <div class="md:col-span-7 space-y-4">
-              <span id="timelineStepName" class="text-xs font-extrabold uppercase text-sprout-600 tracking-wider block">
+              <span id="timelineStepName" class="text-xs font-black uppercase text-tle-purple tracking-wider block">
                 Step 1 of 6
               </span>
-              <h3 id="timelineHeading" class="font-heading text-2xl font-bold text-slate-900">
-                Warm Welcomes & Wholesome Breakfast
+              <h3 id="timelineHeading" class="font-heading text-2xl font-black text-slate-900">
+                Warm Welcomes &amp; Wholesome Breakfast
               </h3>
               <p id="timelineDescription" class="text-sm text-slate-600 leading-relaxed">
                 Children are greeted by name with warm smiles. Free choice morning play allows children to gently ease into their day while enjoying freshly prepared breakfast and milk.
               </p>
 
-              <!-- Parent App Live Update Mockup -->
-              <div class="bg-white p-3.5 rounded-2xl border border-stone-200 flex items-center gap-3">
-                <div class="w-9 h-9 rounded-xl bg-sprout-600 text-white flex items-center justify-center shrink-0">
+              <div class="bg-slate-50 p-3.5 rounded-2xl border border-stone-200 flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-tle-cyan text-white flex items-center justify-center shrink-0">
                   <i data-lucide="smartphone" class="w-5 h-5"></i>
                 </div>
                 <div class="text-xs">
@@ -809,61 +915,57 @@
     </section>
 
     <!-- ================= INTERACTIVE TUITION ESTIMATOR ================= -->
-    <section id="tuition-calc" class="py-20 bg-[#FAF8F5] border-t border-stone-200">
+    <section id="tuition-calc" class="py-20 bg-white">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-coral-100 text-coral-800 text-xs font-bold uppercase tracking-wider">
+        <div class="text-center max-w-3xl mx-auto mb-12 space-y-3 reveal">
+          <div class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-pink-100 text-tle-coral font-black text-xs uppercase tracking-wider">
             <span>💵</span> 100% Upfront Transparency
           </div>
-          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900">
-            Interactive Tuition & Schedule Estimator
+          <h2 class="font-heading text-3xl sm:text-4xl font-black text-slate-900">
+            Interactive Tuition &amp; Schedule Estimator
           </h2>
           <p class="text-base text-slate-600">
             No hidden fees. Select your preferred campus, program, and schedule to see estimated weekly rates.
           </p>
         </div>
 
-        <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-lg border-2 border-sprout-200">
+        <div class="bg-[#EAF5FC] rounded-[36px] p-6 sm:p-10 shadow-lg border-2 border-sky-100 reveal-zoom">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
-            <!-- Controls (7 cols) -->
             <div class="lg:col-span-7 space-y-6">
               
-              <!-- Campus Selector -->
               <div class="space-y-2">
-                <label class="text-xs font-extrabold uppercase text-slate-700 tracking-wider">1. Select Campus:</label>
+                <label class="text-xs font-black uppercase text-slate-700 tracking-wider">1. Select Campus:</label>
                 <div class="grid grid-cols-2 gap-3">
-                  <button id="calcBtnPem" onclick="calcSetCampus('Pembroke')" class="p-3 rounded-2xl font-heading font-bold text-xs border-2 border-sprout-500 bg-sprout-50 text-sprout-800 transition">
+                  <button id="calcBtnPem" onclick="calcSetCampus('Pembroke')" class="p-3.5 rounded-2xl font-heading font-black text-xs border-2 border-tle-cyan bg-white text-tle-cyan shadow-sm transition">
                     🏫 Pembroke Campus
                   </button>
-                  <button id="calcBtnRan" onclick="calcSetCampus('Randolph')" class="p-3 rounded-2xl font-heading font-bold text-xs border-2 border-stone-200 bg-white text-slate-700 hover:border-sprout-300 transition">
+                  <button id="calcBtnRan" onclick="calcSetCampus('Randolph')" class="p-3.5 rounded-2xl font-heading font-black text-xs border-2 border-transparent bg-white/70 text-slate-700 hover:bg-white transition">
                     🏫 Randolph Campus
                   </button>
                 </div>
               </div>
 
-              <!-- Age / Program Tier -->
               <div class="space-y-2">
-                <label class="text-xs font-extrabold uppercase text-slate-700 tracking-wider">2. Select Program Tier:</label>
-                <select id="calcProgramSelect" onchange="recalculateTuition()" class="w-full p-3.5 rounded-2xl border-2 border-stone-200 bg-white font-medium text-sm text-slate-800 focus:border-sprout-500 outline-none">
+                <label class="text-xs font-black uppercase text-slate-700 tracking-wider">2. Select Program Tier:</label>
+                <select id="calcProgramSelect" onchange="recalculateTuition()" class="w-full p-3.5 rounded-2xl border-2 border-sky-100 bg-white font-bold text-sm text-slate-800 focus:border-tle-cyan outline-none shadow-sm">
                   <option value="infant">👶 Infant Care Suite (1 – 15 Months)</option>
                   <option value="toddler" selected>🧸 Toddler Discovery Suite (15 – 33 Months)</option>
-                  <option value="preschool">🎨 Preschool & Pre-K Academy (2.9 – 5 Years)</option>
+                  <option value="preschool">🎨 Preschool &amp; Pre-K Academy (2.9 – 5 Years)</option>
                 </select>
               </div>
 
-              <!-- Days per Week -->
               <div class="space-y-2">
-                <label class="text-xs font-extrabold uppercase text-slate-700 tracking-wider">3. Schedule (Days / Week):</label>
-                <div class="grid grid-cols-3 gap-3 text-center text-xs font-bold">
-                  <button id="calcDays2" onclick="calcSetDays(2)" class="p-2.5 rounded-xl border-2 border-stone-200 bg-white text-slate-700 transition">
+                <label class="text-xs font-black uppercase text-slate-700 tracking-wider">3. Schedule (Days / Week):</label>
+                <div class="grid grid-cols-3 gap-3 text-center text-xs font-black">
+                  <button id="calcDays2" onclick="calcSetDays(2)" class="p-3 rounded-2xl border-2 border-transparent bg-white/70 text-slate-700 transition">
                     2 Days (T/Th)
                   </button>
-                  <button id="calcDays3" onclick="calcSetDays(3)" class="p-2.5 rounded-xl border-2 border-stone-200 bg-white text-slate-700 transition">
+                  <button id="calcDays3" onclick="calcSetDays(3)" class="p-3 rounded-2xl border-2 border-transparent bg-white/70 text-slate-700 transition">
                     3 Days (M/W/F)
                   </button>
-                  <button id="calcDays5" onclick="calcSetDays(5)" class="p-2.5 rounded-xl border-2 border-sprout-500 bg-sprout-50 text-sprout-800 transition">
+                  <button id="calcDays5" onclick="calcSetDays(5)" class="p-3 rounded-2xl border-2 border-tle-cyan bg-white text-tle-cyan shadow-sm transition">
                     5 Days (Full Week)
                   </button>
                 </div>
@@ -871,26 +973,24 @@
 
             </div>
 
-            <!-- Price Output & Included Perks (5 cols) -->
-            <div class="lg:col-span-5 bg-[#FAF8F5] p-6 rounded-3xl border border-stone-200 shadow-md space-y-5 text-center">
+            <div class="lg:col-span-5 bg-white p-6 rounded-[32px] border border-sky-100 shadow-md space-y-5 text-center">
               
               <div>
                 <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Estimated Weekly Tuition</span>
-                <div id="calcTuitionAmount" class="font-heading text-4xl font-extrabold text-slate-900 mt-1">
+                <div id="calcTuitionAmount" class="font-heading text-4xl font-black text-slate-900 mt-1">
                   $365 <span class="text-sm font-normal text-slate-500">/ week</span>
                 </div>
-                <span class="text-[11px] text-sprout-600 font-bold">✓ All-Inclusive &bull; No Surprise Supply Fees</span>
+                <span class="text-[11px] text-tle-cyan font-black">✓ All-Inclusive &bull; No Hidden Fees</span>
               </div>
 
-              <!-- Included Perks Checklist -->
-              <div class="text-left space-y-2 pt-3 border-t border-stone-200 text-xs text-slate-600 font-medium">
-                <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-sprout-600"></i> Hot breakfast & healthy snacks</div>
-                <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-sprout-600"></i> Daily real-time photo parent app</div>
-                <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-sprout-600"></i> Diaper changing supplies & bedding</div>
-                <div class="flex items-center gap-2 text-sunny-700 font-bold"><i data-lucide="gift" class="w-4 h-4 text-sunny-500"></i> $50 Registration credit applied</div>
+              <div class="text-left space-y-2 pt-3 border-t border-stone-100 text-xs text-slate-600 font-medium">
+                <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-tle-cyan"></i> Hot breakfast &amp; healthy snacks</div>
+                <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-tle-cyan"></i> Daily real-time photo parent app</div>
+                <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-tle-cyan"></i> Diaper supplies &amp; sanitized bedding</div>
+                <div class="flex items-center gap-2 text-tle-purple font-black"><i data-lucide="gift" class="w-4 h-4 text-tle-yellow"></i> $50 Registration credit applied</div>
               </div>
 
-              <button onclick="triggerConfetti(); openTourModal(calcSelectedCampus)" class="w-full py-3.5 rounded-2xl font-heading font-bold text-sm bg-gradient-to-r from-sprout-600 to-sprout-500 text-white shadow-lg shadow-sprout-500/25 hover:shadow-sprout-500/40 transition flex items-center justify-center gap-2">
+              <button onclick="triggerConfetti(); openTourModal(calcSelectedCampus)" class="w-full py-3.5 rounded-full font-heading font-black text-sm bg-tle-cyan hover:bg-tle-cyandark text-white shadow-lg shadow-tle-cyan/30 transition flex items-center justify-center gap-2">
                 <span>🎉</span> Lock In Rate with a Tour
               </button>
 
@@ -903,12 +1003,12 @@
     </section>
 
     <!-- ================= PEACE OF MIND SAFETY BADGES ================= -->
-    <section class="py-16 bg-white border-t border-stone-200">
+    <section class="py-16 bg-[#FAF9F6] border-t border-stone-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
-          <h2 class="font-heading text-2xl sm:text-3xl font-bold text-slate-900">
-            Safety, Security & Uncompromised Trust
+        <div class="text-center max-w-2xl mx-auto mb-10 space-y-2 reveal">
+          <h2 class="font-heading text-2xl sm:text-3xl font-black text-slate-900">
+            Safety, Security &amp; Uncompromised Trust
           </h2>
           <p class="text-xs sm:text-sm text-slate-600">
             Your child's physical and emotional well-being is our highest commitment every single day.
@@ -917,35 +1017,35 @@
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           
-          <div class="bg-[#FAF8F5] p-5 rounded-2xl border border-stone-200 text-center space-y-2 shadow-sm">
-            <div class="w-10 h-10 mx-auto rounded-xl bg-sprout-100 text-sprout-700 flex items-center justify-center text-xl">
+          <div class="bg-white p-5 rounded-[28px] border border-stone-200 text-center space-y-2 shadow-sm reveal stagger-1">
+            <div class="w-11 h-11 mx-auto rounded-2xl bg-sky-100 text-tle-cyan flex items-center justify-center text-xl shadow-sm">
               🛡️
             </div>
-            <h4 class="font-heading font-bold text-sm text-slate-900">MA EEC Licensed</h4>
+            <h4 class="font-heading font-black text-sm text-slate-900">MA EEC Licensed</h4>
             <p class="text-[11px] text-slate-500">100% compliant with strict Massachusetts state childcare standards.</p>
           </div>
 
-          <div class="bg-[#FAF8F5] p-5 rounded-2xl border border-stone-200 text-center space-y-2 shadow-sm">
-            <div class="w-10 h-10 mx-auto rounded-xl bg-sunny-100 text-sunny-700 flex items-center justify-center text-xl">
+          <div class="bg-white p-5 rounded-[28px] border border-stone-200 text-center space-y-2 shadow-sm reveal stagger-2">
+            <div class="w-11 h-11 mx-auto rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl shadow-sm">
               ❤️
             </div>
-            <h4 class="font-heading font-bold text-sm text-slate-900">100% CPR Certified</h4>
+            <h4 class="font-heading font-black text-sm text-slate-900">100% CPR Certified</h4>
             <p class="text-[11px] text-slate-500">All educators are certified in Pediatric First Aid and CPR.</p>
           </div>
 
-          <div class="bg-[#FAF8F5] p-5 rounded-2xl border border-stone-200 text-center space-y-2 shadow-sm">
-            <div class="w-10 h-10 mx-auto rounded-xl bg-skybrand-100 text-skybrand-700 flex items-center justify-center text-xl">
+          <div class="bg-white p-5 rounded-[28px] border border-stone-200 text-center space-y-2 shadow-sm reveal stagger-3">
+            <div class="w-11 h-11 mx-auto rounded-2xl bg-purple-100 text-tle-purple flex items-center justify-center text-xl shadow-sm">
               💨
             </div>
-            <h4 class="font-heading font-bold text-sm text-slate-900">Hospital-Grade Air</h4>
+            <h4 class="font-heading font-black text-sm text-slate-900">Hospital-Grade Air</h4>
             <p class="text-[11px] text-slate-500">Continuous HEPA filtration and daily non-toxic sanitization routines.</p>
           </div>
 
-          <div class="bg-[#FAF8F5] p-5 rounded-2xl border border-stone-200 text-center space-y-2 shadow-sm">
-            <div class="w-10 h-10 mx-auto rounded-xl bg-coral-100 text-coral-700 flex items-center justify-center text-xl">
+          <div class="bg-white p-5 rounded-[28px] border border-stone-200 text-center space-y-2 shadow-sm reveal stagger-4">
+            <div class="w-11 h-11 mx-auto rounded-2xl bg-pink-100 text-tle-coral flex items-center justify-center text-xl shadow-sm">
               📱
             </div>
-            <h4 class="font-heading font-bold text-sm text-slate-900">Parent App Updates</h4>
+            <h4 class="font-heading font-black text-sm text-slate-900">Parent App Updates</h4>
             <p class="text-[11px] text-slate-500">Live daily photos, feeding logs, diaper logs, and teacher messaging.</p>
           </div>
 
@@ -956,7 +1056,12 @@
 
   </main>
 
-  <!-- ================= FOOTER ================= -->
+  <!-- ================= FLOATING BACK TO TOP BUTTON ================= -->
+  <button id="backToTopBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="w-12 h-12 rounded-full bg-tle-cyan text-white shadow-xl hover:bg-tle-cyandark flex items-center justify-center transition hover:scale-110 active:scale-95" aria-label="Back to Top">
+    <i data-lucide="chevron-up" class="w-6 h-6"></i>
+  </button>
+
+  <!-- ================= FOOTER (TLE STYLE) ================= -->
   <footer class="bg-slate-900 text-slate-300 pt-16 pb-12 border-t border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
@@ -964,13 +1069,13 @@
         
         <div class="space-y-4">
           <div class="flex items-center gap-2">
-            <span class="text-2xl">🌱</span>
+            <span class="text-2xl">🧸</span>
             <span class="font-heading text-xl font-bold text-white">Here We Grow Daycare</span>
           </div>
           <p class="text-xs text-slate-400 leading-relaxed">
-            Dedicated to providing exceptional, loving, and play-based early childhood education across our state-of-the-art Pembroke and Randolph facilities.
+            Dedicated to providing exceptional, loving, and play-based early childhood education across our modern Pembroke and Randolph facilities.
           </p>
-          <div class="text-xs text-sprout-400 font-semibold">
+          <div class="text-xs text-tle-cyan font-bold">
             Licensed by Massachusetts Department of Early Education and Care (EEC).
           </div>
         </div>
@@ -978,27 +1083,27 @@
         <div class="space-y-2 text-xs">
           <h4 class="font-heading font-bold text-sm text-white uppercase tracking-wider mb-2">Pembroke Campus</h4>
           <p class="text-slate-400">55 Corporate Park Dr<br />Pembroke, MA 02359</p>
-          <p class="text-sprout-300 font-bold">📞 (781) 826-1900</p>
+          <p class="text-tle-yellow font-bold">📞 (781) 826-1900</p>
           <p class="text-slate-500">Director: On-site Director Desk</p>
         </div>
 
         <div class="space-y-2 text-xs">
           <h4 class="font-heading font-bold text-sm text-white uppercase tracking-wider mb-2">Randolph Campus</h4>
           <p class="text-slate-400">716 N Main St<br />Randolph, MA 02368</p>
-          <p class="text-sunny-300 font-bold">📞 (781) 961-4488</p>
+          <p class="text-tle-yellow font-bold">📞 (781) 961-4488</p>
           <p class="text-slate-500">Director: On-site Director Desk</p>
         </div>
 
         <div class="space-y-3 text-xs">
           <h4 class="font-heading font-bold text-sm text-white uppercase tracking-wider mb-2">Parent Quick Links</h4>
           <ul class="space-y-2">
+            <li><a href="#curriculum" class="hover:text-white transition">Curriculum</a></li>
+            <li><a href="#programs-grid" class="hover:text-white transition">Age Programs</a></li>
             <li><a href="#storybook-section" class="hover:text-white transition">3D Storybook Flip</a></li>
-            <li><a href="#age-explorer" class="hover:text-white transition">Classroom Programs</a></li>
             <li><a href="#tuition-calc" class="hover:text-white transition">Weekly Tuition Estimator</a></li>
-            <li><a href="#daily-rhythm" class="hover:text-white transition">Daily Schedule & Meals</a></li>
           </ul>
-          <button onclick="openTourModal('Any')" class="w-full py-2.5 rounded-xl font-heading font-bold text-xs bg-sprout-600 text-white hover:bg-sprout-700 transition">
-            Book Tour ($50 Credit)
+          <button onclick="openTourModal('Any')" class="w-full py-2.5 rounded-full font-heading font-bold text-xs bg-tle-cyan text-white hover:bg-tle-cyandark transition shadow">
+            Find a Center ($50 Credit)
           </button>
         </div>
 
@@ -1011,7 +1116,7 @@
           <span>&bull;</span>
           <a href="#" class="hover:text-slate-300 transition">Terms of Enrollment</a>
           <span>&bull;</span>
-          <a href="#top" class="text-sprout-400 hover:underline">Back to Top ↑</a>
+          <a href="#top" class="text-tle-cyan hover:underline">Back to Top ↑</a>
         </div>
       </div>
 
@@ -1020,31 +1125,31 @@
 
   <!-- ================= 3-STEP TOUR BOOKING WIZARD MODAL ================= -->
   <div id="tourModal" class="modal-overlay modal-hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
-    <div class="bg-white rounded-3xl shadow-2xl max-w-lg w-full overflow-hidden border border-stone-200 relative animate-scale-up">
+    <div class="bg-white rounded-[36px] shadow-2xl max-w-lg w-full overflow-hidden border border-stone-200 relative animate-scale-up">
       
       <button onclick="closeTourModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-stone-100 hover:bg-stone-200 text-slate-700 flex items-center justify-center transition" aria-label="Close Modal">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
 
-      <div class="bg-gradient-to-r from-sprout-600 to-sprout-700 text-white p-6 pr-14">
+      <div class="bg-gradient-to-r from-tle-purple via-[#8B2FA3] to-tle-purple text-white p-6 pr-14">
         <div class="flex items-center gap-2 mb-1">
-          <span class="text-xl">🌱</span>
-          <h3 class="font-heading font-bold text-xl">Schedule a Campus Tour</h3>
+          <span class="text-xl">🧸</span>
+          <h3 class="font-heading font-black text-xl">Schedule a Campus Tour</h3>
         </div>
-        <p class="text-xs text-sprout-100">
-          Meet our loving directors, see our classrooms in action, and receive your <strong>$50 registration credit</strong>!
+        <p class="text-xs text-purple-100">
+          Meet our loving educators, see our classrooms in action, and receive your <strong>$50 registration credit</strong>!
         </p>
 
         <div class="flex items-center gap-4 mt-4 text-xs">
-          <div id="stepLabel1" class="text-sunny-300 font-extrabold flex items-center gap-1">
+          <div id="stepLabel1" class="text-tle-yellow font-black flex items-center gap-1">
             <span class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-[10px]">1</span> Location
           </div>
-          <span class="text-sprout-300">→</span>
-          <div id="stepLabel2" class="text-sprout-200 flex items-center gap-1">
-            <span class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-[10px]">2</span> Date & Time
+          <span class="text-purple-300">→</span>
+          <div id="stepLabel2" class="text-purple-200 flex items-center gap-1">
+            <span class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-[10px]">2</span> Date &amp; Time
           </div>
-          <span class="text-sprout-300">→</span>
-          <div id="stepLabel3" class="text-sprout-200 flex items-center gap-1">
+          <span class="text-purple-300">→</span>
+          <div id="stepLabel3" class="text-purple-200 flex items-center gap-1">
             <span class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-[10px]">3</span> Contact
           </div>
         </div>
@@ -1057,12 +1162,12 @@
           <div class="space-y-1.5">
             <label class="text-xs font-bold text-slate-700">Select Preferred Campus:</label>
             <div class="grid grid-cols-2 gap-3">
-              <label class="p-3 rounded-2xl border-2 border-stone-200 has-[:checked]:border-sprout-600 has-[:checked]:bg-sprout-50 cursor-pointer transition flex items-center gap-2 text-xs font-bold text-slate-800">
-                <input type="radio" name="modalCampus" value="Pembroke" checked class="text-sprout-600 focus:ring-0" />
+              <label class="p-3 rounded-2xl border-2 border-stone-200 has-[:checked]:border-tle-cyan has-[:checked]:bg-sky-50 cursor-pointer transition flex items-center gap-2 text-xs font-bold text-slate-800">
+                <input type="radio" name="modalCampus" value="Pembroke" checked class="text-tle-cyan focus:ring-0" />
                 <span>Pembroke Campus</span>
               </label>
-              <label class="p-3 rounded-2xl border-2 border-stone-200 has-[:checked]:border-sprout-600 has-[:checked]:bg-sprout-50 cursor-pointer transition flex items-center gap-2 text-xs font-bold text-slate-800">
-                <input type="radio" name="modalCampus" value="Randolph" class="text-sprout-600 focus:ring-0" />
+              <label class="p-3 rounded-2xl border-2 border-stone-200 has-[:checked]:border-tle-cyan has-[:checked]:bg-sky-50 cursor-pointer transition flex items-center gap-2 text-xs font-bold text-slate-800">
+                <input type="radio" name="modalCampus" value="Randolph" class="text-tle-cyan focus:ring-0" />
                 <span>Randolph Campus</span>
               </label>
             </div>
@@ -1070,7 +1175,7 @@
 
           <div class="space-y-1.5">
             <label class="text-xs font-bold text-slate-700">Child's Program or Age Group:</label>
-            <select id="modalProgram" class="w-full p-3 rounded-xl border border-stone-300 text-xs font-medium focus:border-sprout-500 outline-none">
+            <select id="modalProgram" class="w-full p-3 rounded-xl border border-stone-300 text-xs font-medium focus:border-tle-cyan outline-none">
               <option>Infant Care (1 - 15 Months)</option>
               <option selected>Toddler Discovery (15 - 33 Months)</option>
               <option>Preschool (2.9 - 4 Years)</option>
@@ -1079,8 +1184,8 @@
           </div>
 
           <div class="pt-2">
-            <button type="button" onclick="goToStep(2)" class="w-full py-3 rounded-xl font-heading font-bold text-xs bg-sprout-600 text-white hover:bg-sprout-700 transition">
-              Next: Select Date & Time →
+            <button type="button" onclick="goToStep(2)" class="w-full py-3.5 rounded-full font-heading font-black text-xs bg-tle-cyan hover:bg-tle-cyandark text-white shadow transition">
+              Next: Select Date &amp; Time →
             </button>
           </div>
         </div>
@@ -1089,21 +1194,21 @@
         <div id="wizardStep2" class="space-y-4 hidden">
           <div class="space-y-1.5">
             <label class="text-xs font-bold text-slate-700">Preferred Tour Date:</label>
-            <input type="date" id="tourDateInput" class="w-full p-3 rounded-xl border border-stone-300 text-xs font-medium focus:border-sprout-500 outline-none" required />
+            <input type="date" id="tourDateInput" class="w-full p-3 rounded-xl border border-stone-300 text-xs font-medium focus:border-tle-cyan outline-none" required />
           </div>
 
           <div class="space-y-1.5">
             <label class="text-xs font-bold text-slate-700">Preferred Tour Time Slot:</label>
             <div class="grid grid-cols-3 gap-2 text-xs font-bold text-slate-800">
-              <label class="p-2.5 rounded-xl border border-stone-200 has-[:checked]:border-sprout-600 has-[:checked]:bg-sprout-50 text-center cursor-pointer">
+              <label class="p-2.5 rounded-xl border border-stone-200 has-[:checked]:border-tle-cyan has-[:checked]:bg-sky-50 text-center cursor-pointer">
                 <input type="radio" name="modalTime" value="10:00 AM" checked class="sr-only" />
                 <span>10:00 AM</span>
               </label>
-              <label class="p-2.5 rounded-xl border border-stone-200 has-[:checked]:border-sprout-600 has-[:checked]:bg-sprout-50 text-center cursor-pointer">
+              <label class="p-2.5 rounded-xl border border-stone-200 has-[:checked]:border-tle-cyan has-[:checked]:bg-sky-50 text-center cursor-pointer">
                 <input type="radio" name="modalTime" value="2:30 PM" class="sr-only" />
                 <span>2:30 PM</span>
               </label>
-              <label class="p-2.5 rounded-xl border border-stone-200 has-[:checked]:border-sprout-600 has-[:checked]:bg-sprout-50 text-center cursor-pointer">
+              <label class="p-2.5 rounded-xl border border-stone-200 has-[:checked]:border-tle-cyan has-[:checked]:bg-sky-50 text-center cursor-pointer">
                 <input type="radio" name="modalTime" value="4:30 PM" class="sr-only" />
                 <span>4:30 PM</span>
               </label>
@@ -1111,10 +1216,10 @@
           </div>
 
           <div class="flex items-center gap-3 pt-2">
-            <button type="button" onclick="goToStep(1)" class="w-1/3 py-3 rounded-xl font-bold text-xs bg-stone-100 text-slate-700 hover:bg-stone-200 transition">
+            <button type="button" onclick="goToStep(1)" class="w-1/3 py-3 rounded-full font-bold text-xs bg-stone-100 text-slate-700 hover:bg-stone-200 transition">
               ← Back
             </button>
-            <button type="button" onclick="goToStep(3)" class="w-2/3 py-3 rounded-xl font-heading font-bold text-xs bg-sprout-600 text-white hover:bg-sprout-700 transition">
+            <button type="button" onclick="goToStep(3)" class="w-2/3 py-3.5 rounded-full font-heading font-black text-xs bg-tle-cyan hover:bg-tle-cyandark text-white transition shadow">
               Next: Contact Info →
             </button>
           </div>
@@ -1125,24 +1230,24 @@
           <div class="grid grid-cols-2 gap-3">
             <div class="space-y-1">
               <label class="text-xs font-bold text-slate-700">Parent Name:</label>
-              <input type="text" placeholder="Jane Doe" required class="w-full p-2.5 rounded-xl border border-stone-300 text-xs focus:border-sprout-500 outline-none" />
+              <input type="text" placeholder="Jane Doe" required class="w-full p-2.5 rounded-xl border border-stone-300 text-xs focus:border-tle-cyan outline-none" />
             </div>
             <div class="space-y-1">
               <label class="text-xs font-bold text-slate-700">Phone Number:</label>
-              <input type="tel" placeholder="(781) 555-0123" required class="w-full p-2.5 rounded-xl border border-stone-300 text-xs focus:border-sprout-500 outline-none" />
+              <input type="tel" placeholder="(781) 555-0123" required class="w-full p-2.5 rounded-xl border border-stone-300 text-xs focus:border-tle-cyan outline-none" />
             </div>
           </div>
 
           <div class="space-y-1">
             <label class="text-xs font-bold text-slate-700">Email Address:</label>
-            <input type="email" placeholder="jane@example.com" required class="w-full p-2.5 rounded-xl border border-stone-300 text-xs focus:border-sprout-500 outline-none" />
+            <input type="email" placeholder="jane@example.com" required class="w-full p-2.5 rounded-xl border border-stone-300 text-xs focus:border-tle-cyan outline-none" />
           </div>
 
           <div class="flex items-center gap-3 pt-2">
-            <button type="button" onclick="goToStep(2)" class="w-1/3 py-3 rounded-xl font-bold text-xs bg-stone-100 text-slate-700 hover:bg-stone-200 transition">
+            <button type="button" onclick="goToStep(2)" class="w-1/3 py-3 rounded-full font-bold text-xs bg-stone-100 text-slate-700 hover:bg-stone-200 transition">
               ← Back
             </button>
-            <button type="submit" class="w-2/3 py-3 rounded-xl font-heading font-bold text-xs bg-gradient-to-r from-sprout-600 to-sprout-500 text-white shadow-lg shadow-sprout-500/25 transition">
+            <button type="submit" class="w-2/3 py-3.5 rounded-full font-heading font-black text-xs bg-gradient-to-r from-tle-cyan to-tle-cyandark text-white shadow-lg shadow-tle-cyan/25 transition">
               🎉 Confirm Tour ($50 Credit)
             </button>
           </div>
@@ -1152,20 +1257,20 @@
 
       <!-- Confirmation Screen -->
       <div id="wizardConfirmation" class="p-8 text-center space-y-4 hidden">
-        <div class="w-16 h-16 rounded-full bg-sprout-100 text-sprout-700 mx-auto flex items-center justify-center text-3xl animate-bounce-soft">
-          🌱
+        <div class="w-16 h-16 rounded-full bg-sky-100 text-tle-cyan mx-auto flex items-center justify-center text-3xl animate-bounce-soft">
+          🧸
         </div>
-        <h3 class="font-heading text-2xl font-bold text-slate-900">Tour Confirmed!</h3>
+        <h3 class="font-heading text-2xl font-black text-slate-900">Tour Confirmed!</h3>
         <p class="text-xs text-slate-600 max-w-xs mx-auto">
-          We can't wait to meet you and your little one! A confirmation email and text have been sent with your <strong>$50 registration credit voucher</strong>.
+          We can't wait to meet you and your child! A confirmation email and text have been sent with your <strong>$50 registration credit voucher</strong>.
         </p>
-        <div class="bg-sprout-50 p-3 rounded-xl text-xs font-medium text-sprout-800 space-y-1">
+        <div class="bg-sky-50 p-3.5 rounded-2xl text-xs font-medium text-slate-800 space-y-1 border border-sky-100">
           <div>📍 <strong id="confirmedCampus">Pembroke Campus</strong></div>
           <div>👶 <span id="confirmedProgram">Toddler Discovery Suite</span></div>
           <div>⏰ <span id="confirmedTime">Tomorrow at 10:00 AM</span></div>
         </div>
-        <button onclick="closeTourModal()" class="w-full py-3 rounded-xl font-heading font-bold text-xs bg-sprout-600 text-white hover:bg-sprout-700 transition">
-          Done & Return to Site
+        <button onclick="closeTourModal()" class="w-full py-3.5 rounded-full font-heading font-black text-xs bg-tle-cyan text-white hover:bg-tle-cyandark transition shadow">
+          Done &amp; Return to Site
         </button>
       </div>
 
