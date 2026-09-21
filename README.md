@@ -81,7 +81,7 @@ There is no build step, package manager, or server-side code — the site runs b
 
 5. **Hero section** — two-column layout:
    - Left: "happy happens here." eyebrow, headline "Preschool & Daycare That Inspires Discovery and Makes Learning Fun", supporting copy, a rounded campus-finder search pill (dropdown for Pembroke/Randolph + "Find a Center" button that opens the tour modal and fires confetti), and a trust row ("State Licensed Facility", "Small Teacher-to-Child Ratios", "CPR & First Aid Certified Staff").
-   - Right: an arched photo portal image with a "Learning Through Play" caption badge, a floating "Pip the Bear" mascot sticker, and a floating "$50 Tour Credit" badge.
+   - Right: an arched photo portal image with a "Learning Through Play" caption badge, a floating "Pip the Bear" mascot sticker, and a floating "$50 Off Credit" badge.
 
 6. **Programs grid** (`#programs-grid`) — 3 age-based program cards matching the real site's actual programs, each with an icon, age range, description, and an "Explore →" button that opens the tour modal pre-filled to that program:
    - 🍼 **Infant Program** — 1 – 15 Months (individual schedules, consistent care)
@@ -92,18 +92,18 @@ There is no build step, package manager, or server-side code — the site runs b
    - **Cover** — "Where Happy Days & Bright Futures Begin."
    - **Chapter 1** — Infant & Toddler Care (1–33 Mo)
    - **Chapter 2** — Preschool Readiness (2.9–5 Yrs, kindergarten-ready)
-   - **Chapter 3** — Daily Care & Playgrounds (breakfast/snacks provided, outdoor activities & field trips), ending with a "🎉 Book Tour ($50 Credit)" CTA.
+   - **Chapter 3** — Daily Care & Playgrounds (breakfast/snacks provided, outdoor activities & field trips), ending with a "🎉 Get $50 Off" CTA.
    - Flip logic (`flipPage`/`unflipPage`/`goToBookPage` in `app.js`) rotates each page `-180deg` around its left edge and updates the 4 dot indicators.
 
-8. **Campus locations** (`#campuses`) — two side-by-side cards, each with address, hours, fax, email, a click-to-call phone button (named contact), and a "Book Tour" button:
-   - **Pembroke Campus** — 42 Mattakeesett Street, Pembroke, MA 02359, hours Mon–Fri 7:30 AM–5:00 PM, phone `Call Kim: (781) 293-6800`, fax `781-293-6822`, email `Kim@herewegrowdaycare.com`, "Book Pembroke Tour" button.
-   - **Randolph Campus** — First Congregational Church, 1 South Main Street, Randolph, MA 02368, hours Mon–Fri 7:30 AM–5:30 PM, phone `Call Joyce: (781) 986-4145`, fax `781-986-7002`, email `herewegrowrandolph@aol.com`, "Book Randolph Tour" button.
+8. **Campus locations** (`#campuses`) — two side-by-side cards, each with address, hours, fax, email, a click-to-call phone button (named contact), and a "Get $50 Off" button:
+   - **Pembroke Campus** — 42 Mattakeesett Street, Pembroke, MA 02359, hours Mon–Fri 7:30 AM–5:00 PM, phone `Call Kim: (781) 293-6800`, fax `781-293-6822`, email `Kim@herewegrowdaycare.com`, "Get $50 Off • Pembroke" button.
+   - **Randolph Campus** — First Congregational Church, 1 South Main Street, Randolph, MA 02368, hours Mon–Fri 7:30 AM–5:30 PM, phone `Call Joyce: (781) 986-4145`, fax `781-986-7002`, email `herewegrowrandolph@aol.com`, "Get $50 Off • Randolph" button.
 
 9. **Interactive age explorer** (`#age-explorer`) — a range slider from 1 to 60 months (`#ageSliderInput`). Dragging it calls `updateAgeExplorer(value)` in `app.js`, which looks up the matching program from a 3-tier dataset (mirroring the real site's actual programs) and live-updates the age label, program image, title, description, and 2 "Program Focus" bullets:
    1. Infant Program (≤15 mo)
    2. Toddler Program (≤33 mo)
    3. Preschool Program (≤60 mo)
-   A "Tour This Room" button dynamically retargets to the matched program.
+   A "Get $50 Off" button dynamically retargets to the matched program.
 
 10. **"Games, Activities & Education"** (`#curriculum`) — 4 static cards sourced from the real site's own homepage copy (no invented curriculum framework):
     - 🎲 Games
@@ -117,7 +117,7 @@ There is no build step, package manager, or server-side code — the site runs b
     3. Lunch Time (not provided — pack a lunch)
     4. Activities & Pickup (Pembroke closes 5:00 PM / Randolph 5:30 PM)
 
-12. **Tuition & Schedule** (`#tuition-calc`) — since the real site publishes no pricing at all, this section no longer calculates a dollar figure. It lets the visitor pick a campus and program, states the real "2–5 days per week" scheduling flexibility, and shows a **"Contact Us for Current Rates"** card with a campus-aware click-to-call phone link (`calcSetCampus(campus)` in `app.js` swaps the number/label) plus a "Schedule a Tour" button. The $50 Off Registration Fee promo is shown since it is a real, published offer.
+12. **Tuition & Schedule** (`#tuition-calc`) — since the real site publishes no pricing at all, this section no longer calculates a dollar figure. It lets the visitor pick a campus and program, states the real "2–5 days per week" scheduling flexibility, and shows a **"Contact Us for Current Rates"** card with a campus-aware click-to-call phone link (`calcSetCampus(campus)` in `app.js` swaps the number/label) plus a "Get $50 Off" button. The $50 Off Registration Fee promo is shown since it is a real, published offer.
 
 13. **Safety/trust badges** — 4-item grid, all sourced from real site content: State Licensed Facility, CPR Certified Staff, Field Trips, Flexible Scheduling.
 
@@ -125,12 +125,11 @@ There is no build step, package manager, or server-side code — the site runs b
 
 15. **Floating "Back to Top" button** (`#backToTopBtn`) — appears once the user scrolls past 320px; smooth-scrolls to top on click.
 
-16. **Tour booking modal** (`#tourModal`) — a 3-step wizard triggered by any "Find a Center" / "Book Tour" / "Explore" button (`openTourModal(campus, program)`):
-    - **Step 1 — Location**: choose Pembroke or Randolph, choose a program/age group from a dropdown.
-    - **Step 2 — Date & Time**: date picker (defaults to tomorrow, cannot pick a past date) + a choice of 3 time slots (10:00 AM, 2:30 PM, 4:30 PM).
-    - **Step 3 — Contact**: parent name, phone, email (all client-side `required` fields, no backend submission).
-    - On submit (`handleWizardSubmit`), the form is replaced with a confirmation screen showing the chosen campus/program/date+time and a "$50 registration credit voucher" message, and fires a confetti burst.
-    - **Note:** the form does not actually send data anywhere (no backend/API call) — it only updates the DOM. Wiring it to a real lead-capture endpoint (email, CRM, etc.) would be required for production use.
+16. **Contact modal** (`#tourModal`) — a single-step form triggered by any "Find a Center" / "Get $50 Off" / "Explore" button (`openTourModal(campus, program)`; the campus/program arguments are accepted for backward compatibility with existing button `onclick`s but no longer used to pre-fill anything). Note: the modal's copy avoids the word "Tour" per the client's preference — it's framed entirely around the $50 off promo instead.
+    - **Fields**: Name, Email, Mobile Number, Message (all client-side `required`).
+    - **Submission**: `handleContactSubmit(e)` in `app.js` POSTs the form data to a **Formspree** endpoint (`FORMSPREE_ENDPOINT` constant, currently `https://formspree.io/f/xgavkobl` — a real Formspree form connected to `dubeynaman31@gmail.com` via their dashboard) via `fetch()`, with `Accept: application/json` so Formspree responds with JSON instead of redirecting the page.
+    - On success, the form is replaced with a confirmation screen ("Message Sent!") and fires a confetti burst. On failure (network error or non-OK response), an inline error message is shown instead, and the form stays visible so the visitor can retry.
+    - **Setup note:** Formspree's old no-signup email-endpoint shortcut (`https://formspree.io/<email>`) is deprecated and silently fails — a real form must be created in the Formspree dashboard first, which is what `xgavkobl` is.
 
 ---
 
@@ -145,7 +144,8 @@ There is no build step, package manager, or server-side code — the site runs b
 | `updateAgeExplorer(months)` | Updates the age-explorer panel (program copy/photo/focus bullets) based on slider value, using the `ageExplorerData` array (3 tiers, matching the real site's 3 programs). |
 | `selectTimeline(index)` | Updates the daily-rhythm panel based on the selected pill button, using the `timelineData` array (4 steps, verified facts only). |
 | `calcSetCampus(campus)` | Updates the Tuition section's selected campus button and swaps the click-to-call phone number/label via the `campusContact` lookup — no pricing math anymore. |
-| `openTourModal(campus, program)` / `closeTourModal()` / `goToStep(n)` / `handleWizardSubmit(e)` | Drive the 3-step tour booking modal: opening/closing, pre-filling defaults, step navigation, and the mock "submission" → confirmation screen. |
+| `openTourModal(campus, program)` / `closeTourModal()` | Open/close the tour/contact modal and reset its form + error state. |
+| `handleContactSubmit(e)` | Submits the Name/Email/Mobile/Message form to Formspree via `fetch()` and shows the confirmation screen on success or an inline error on failure. |
 
 All content strings (program names, focus bullets, timeline steps) are hardcoded as JS data arrays/objects at the top of the relevant sections in `app.js` — there's no CMS or external data source.
 
@@ -193,8 +193,8 @@ All content strings (program names, focus bullets, timeline steps) are hardcoded
 
 ## 7. Known Gaps / Things to Wire Up for Production
 
-- The tour booking form (Step 3 of the modal) does not submit anywhere — no backend, email service, or CRM integration exists yet.
-- The tour modal's 3 fixed time slots (10:00 AM / 2:30 PM / 4:30 PM) are a UI placeholder, not a real published booking process — plan is to replace this step with an embedded Google Form later.
+- The tour/contact form submits to a Formspree form (`https://formspree.io/f/xgavkobl`) on the free tier, which caps submissions per month — worth checking Formspree's dashboard occasionally to make sure the form isn't nearing that limit.
+- The date/time scheduling step was removed when the tour modal was simplified to Name/Email/Mobile/Message — plan is to add a real scheduling step back later, likely via an embedded Google Form.
 - Footer "Privacy Policy" link is a placeholder (`href="#"`); the real site does have a Privacy Policy page this could eventually point to.
 - All photography is sourced from remote Unsplash stock-photo URLs (not licensed/owned photos of the actual centers or actual staff/children) — swap these for real campus photos before launch.
 - No analytics/tracking script is currently included.

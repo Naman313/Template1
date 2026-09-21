@@ -12,15 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize Scroll Reveal Animations
   initScrollAnimations();
 
-  // Set default tour date to tomorrow
-  const dateInput = document.getElementById('tourDateInput');
-  if (dateInput) {
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    dateInput.value = tomorrow.toISOString().split('T')[0];
-    dateInput.min = tomorrow.toISOString().split('T')[0];
-  }
-
   // Mobile menu toggle
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -155,7 +146,7 @@ const ageExplorerData = [
     title: "Infant Program",
     tag: "Infant Program",
     ratio: "Small Ratios",
-    image: "https://images.unsplash.com/photo-1566004100631-35d015d6a491?w=800&auto=format&fit=crop&q=80",
+    image: "temp_tle_hero/IMG_6310-1.jpg",
     desc: "Designed to meet your infant's developmental needs with individual schedules and consistent care in a safe, healthy, and stimulating environment.",
     milestones: [
       "Individual sleep & feeding schedules",
@@ -169,7 +160,7 @@ const ageExplorerData = [
     title: "Toddler Program",
     tag: "Toddler Program",
     ratio: "Small Ratios",
-    image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800&auto=format&fit=crop&q=80",
+    image: "temp_tle_hero/IMG_5266.jpg",
     desc: "Focused on social, emotional, physical, and cognitive development in a safe and caring environment.",
     milestones: [
       "Social & emotional growth",
@@ -183,7 +174,7 @@ const ageExplorerData = [
     title: "Preschool Program",
     tag: "Preschool Program",
     ratio: "Kindergarten Ready",
-    image: "https://images.unsplash.com/photo-1588072432836-e10032774350?w=800&auto=format&fit=crop&q=80",
+    image: "temp_tle_hero/IMG_5418.jpg",
     desc: "An age-appropriate curriculum designed to prepare children for kindergarten, with an emphasis on writing, letter, and number recognition.",
     milestones: [
       "Writing, letter & number recognition",
@@ -239,28 +230,28 @@ const timelineData = [
     step: "Step 1 of 4",
     title: "Morning Arrival",
     desc: "Doors open Monday through Friday at 7:30 AM. Children are greeted warmly and settle in with quiet play as they arrive.",
-    img: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800&auto=format&fit=crop&q=80"
+    img: "temp_tle_hero/IMG_5381.jpg"
   },
   {
     time: "Morning",
     step: "Step 2 of 4",
     title: "Breakfast & Snacks",
     desc: "Breakfast and snacks are provided daily to keep little ones fueled through the morning and afternoon.",
-    img: "https://images.unsplash.com/photo-1588072432836-e10032774350?w=800&auto=format&fit=crop&q=80"
+    img: "temp_tle_hero/IMG_5274.jpg"
   },
   {
     time: "Midday",
     step: "Step 3 of 4",
     title: "Lunch Time",
     desc: "Lunch is not provided — please send a packed lunch from home. Our teachers help with opening containers and encourage healthy eating habits.",
-    img: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&auto=format&fit=crop&q=80"
+    img: "temp_tle_hero/IMG_5421-e1522421536543.jpg"
   },
   {
     time: "Afternoon",
     step: "Step 4 of 4",
     title: "Activities & Pickup",
     desc: "The rest of the day includes a balance of active and quiet play, outdoor activities, and games. Pickup is available until 5:00 PM at Pembroke and 5:30 PM at Randolph.",
-    img: "https://images.unsplash.com/photo-1566004100631-35d015d6a491?w=800&auto=format&fit=crop&q=80"
+    img: "temp_tle_hero/IMG_5385.jpg"
   }
 ];
 
@@ -320,33 +311,23 @@ function calcSetCampus(campus) {
   if (contact && callLabel) callLabel.textContent = `Call ${contact.name}: ${contact.display}`;
 }
 
-// ================= TOUR MODAL WIZARD =================
+// ================= TOUR / CONTACT MODAL =================
+// defaultCampus/defaultProgram are accepted (many buttons across the site pass them) but no
+// longer used to pre-fill anything, since the form only asks for Name/Email/Mobile/Message.
 function openTourModal(defaultCampus, defaultProgram) {
   const modal = document.getElementById('tourModal');
   if (!modal) return;
 
-  goToStep(1);
   const conf = document.getElementById('wizardConfirmation');
-  const form = document.getElementById('tourWizardForm');
+  const form = document.getElementById('tourContactForm');
+  const errorBox = document.getElementById('tourFormError');
+
   if (conf) conf.classList.add('hidden');
-  if (form) form.classList.remove('hidden');
-
-  if (defaultCampus && defaultCampus !== 'Any') {
-    const campusRadio = document.querySelector(`input[name="modalCampus"][value="${defaultCampus}"]`);
-    if (campusRadio) campusRadio.checked = true;
+  if (form) {
+    form.classList.remove('hidden');
+    form.reset();
   }
-
-  if (defaultProgram) {
-    const progSelect = document.getElementById('modalProgram');
-    if (progSelect) {
-      for (let i = 0; i < progSelect.options.length; i++) {
-        if (progSelect.options[i].text.includes(defaultProgram)) {
-          progSelect.selectedIndex = i;
-          break;
-        }
-      }
-    }
-  }
+  if (errorBox) errorBox.classList.add('hidden');
 
   modal.classList.remove('modal-hidden');
   document.body.style.overflow = 'hidden';
@@ -361,59 +342,51 @@ function closeTourModal() {
   }
 }
 
-function goToStep(step) {
-  const s1 = document.getElementById('wizardStep1');
-  const s2 = document.getElementById('wizardStep2');
-  const s3 = document.getElementById('wizardStep3');
+// Sends Name/Email/Mobile/Message to Formspree, which emails it to dubeynaman31@gmail.com.
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgavkobl';
 
-  const l1 = document.getElementById('stepLabel1');
-  const l2 = document.getElementById('stepLabel2');
-  const l3 = document.getElementById('stepLabel3');
-
-  if (s1) s1.classList.add('hidden');
-  if (s2) s2.classList.add('hidden');
-  if (s3) s3.classList.add('hidden');
-
-  if (l1) l1.className = 'text-purple-200 flex items-center gap-1';
-  if (l2) l2.className = 'text-purple-200 flex items-center gap-1';
-  if (l3) l3.className = 'text-purple-200 flex items-center gap-1';
-
-  if (step === 1) {
-    if (s1) s1.classList.remove('hidden');
-    if (l1) l1.className = 'text-tle-yellow font-black flex items-center gap-1';
-  } else if (step === 2) {
-    if (s2) s2.classList.remove('hidden');
-    if (l2) l2.className = 'text-tle-yellow font-black flex items-center gap-1';
-  } else if (step === 3) {
-    if (s3) s3.classList.remove('hidden');
-    if (l3) l3.className = 'text-tle-yellow font-black flex items-center gap-1';
-  }
-
-  if (window.lucide) lucide.createIcons();
-}
-
-function handleWizardSubmit(e) {
+async function handleContactSubmit(e) {
   e.preventDefault();
 
-  const campus = document.querySelector('input[name="modalCampus"]:checked')?.value || 'Pembroke';
-  const program = document.getElementById('modalProgram')?.value || 'Toddler Program';
-  const time = document.querySelector('input[name="modalTime"]:checked')?.value || '10:00 AM';
-  const date = document.getElementById('tourDateInput')?.value || 'Tomorrow';
+  const form = e.target;
+  const submitBtn = document.getElementById('tourSubmitBtn');
+  const errorBox = document.getElementById('tourFormError');
 
-  const cCampus = document.getElementById('confirmedCampus');
-  const cProgram = document.getElementById('confirmedProgram');
-  const cTime = document.getElementById('confirmedTime');
+  if (errorBox) errorBox.classList.add('hidden');
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+  }
 
-  if (cCampus) cCampus.textContent = `${campus} Campus`;
-  if (cProgram) cProgram.textContent = program;
-  if (cTime) cTime.textContent = `${date} at ${time}`;
+  try {
+    const response = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
 
-  const form = document.getElementById('tourWizardForm');
-  const conf = document.getElementById('wizardConfirmation');
+    if (!response.ok) {
+      throw new Error('Formspree returned an error response');
+    }
 
-  if (form) form.classList.add('hidden');
-  if (conf) conf.classList.remove('hidden');
+    const nameValue = form.querySelector('[name="name"]')?.value;
+    const confirmedName = document.getElementById('confirmedName');
+    if (confirmedName) confirmedName.textContent = nameValue || 'there';
 
-  triggerConfetti();
-  if (window.lucide) lucide.createIcons();
+    const conf = document.getElementById('wizardConfirmation');
+    form.classList.add('hidden');
+    if (conf) conf.classList.remove('hidden');
+
+    triggerConfetti();
+  } catch (err) {
+    if (errorBox) {
+      errorBox.textContent = "Something went wrong sending your message — please try again, or call us directly.";
+      errorBox.classList.remove('hidden');
+    }
+  } finally {
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = '🎉 Send Message';
+    }
+  }
 }
