@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize Age Explorer with default value 18
   updateAgeExplorer(18);
-  recalculateTuition();
+  calcSetCampus('Pembroke');
 });
 
 // ================= SCROLL ANIMATIONS ENGINE =================
@@ -146,87 +146,50 @@ function triggerConfetti() {
   }
 }
 
-// ================= AGE EXPLORER SLIDER (100% VERIFIED REAL SMILING KIDS PHOTOS) =================
+// ================= AGE EXPLORER SLIDER =================
+// Age ranges and descriptions match the 3 real programs listed on herewegrowdaycare.com/programs/
 const ageExplorerData = [
   {
-    maxMonths: 14,
-    ageLabel: "Infant Care (1 – 14 Months)",
-    title: "Infant Care & Gentle Nurturing Suite",
-    tag: "Infant Care Suite",
-    ratio: "1:4 Low Ratio • 1-on-1 Gentle Nurturing",
+    maxMonths: 15,
+    ageLabel: "Infant (1 – 15 Months)",
+    title: "Infant Program",
+    tag: "Infant Program",
+    ratio: "Small Ratios",
     image: "https://images.unsplash.com/photo-1566004100631-35d015d6a491?w=800&auto=format&fit=crop&q=80",
-    desc: "A calm, loving nursery where every baby follows their own individual sleeping and feeding schedule. Caregivers provide warm rocking, tummy time, and sensory motor stimulation.",
+    desc: "Designed to meet your infant's developmental needs with individual schedules and consistent care in a safe, healthy, and stimulating environment.",
     milestones: [
-      "Tummy time & head control milestones",
-      "Gentle vocalization & visual tracking",
-      "Individualized nap & feeding schedules",
-      "Daily parent digital photo reports"
+      "Individual sleep & feeding schedules",
+      "Consistent, caring attention"
     ],
-    programParam: "Infant Care (1 - 15 Months)"
+    programParam: "Infant Program (1 - 15 Months)"
   },
   {
-    maxMonths: 24,
-    ageLabel: "Toddler 1 (15 – 24 Months)",
-    title: "Toddler Discovery & First Words Room",
-    tag: "Toddler Discovery Suite",
-    ratio: "1:4 Ratio • Hands-on Sensory Play",
+    maxMonths: 33,
+    ageLabel: "Toddler (15 – 33 Months)",
+    title: "Toddler Program",
+    tag: "Toddler Program",
+    ratio: "Small Ratios",
     image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800&auto=format&fit=crop&q=80",
-    desc: "Active little explorers build early vocabulary, learn sharing routines, and explore safe sensory stations with blocks, soft toys, and finger painting.",
+    desc: "Focused on social, emotional, physical, and cognitive development in a safe and caring environment.",
     milestones: [
-      "First 50+ words & two-word phrases",
-      "Early potty-training partnership",
-      "Fine motor stacking & block building",
-      "Daily music, rhythm sticks & dance"
+      "Social & emotional growth",
+      "Physical & cognitive development"
     ],
-    programParam: "Toddler Discovery (15 - 33 Months)"
-  },
-  {
-    maxMonths: 35,
-    ageLabel: "Twos (2 – 3 Years)",
-    title: "Curiosity & Social Exploration Studio",
-    tag: "Older Toddler Suite",
-    ratio: "1:5 Ratio • Creative Imagination",
-    image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&auto=format&fit=crop&q=80",
-    desc: "Channeling toddler curiosity into social collaboration, independent handwashing, dynamic circle time, and playground sandbox games.",
-    milestones: [
-      "Sentence building & conversational skills",
-      "Potty mastery & independent routines",
-      "Color recognition & shape sorting",
-      "Collaborative play & sharing games"
-    ],
-    programParam: "Toddler Discovery (15 - 33 Months)"
-  },
-  {
-    maxMonths: 47,
-    ageLabel: "Preschool (3 – 4 Years)",
-    title: "Preschool STEAM & Literacy Studio",
-    tag: "Preschool Academy Room",
-    ratio: "1:10 Ratio • Structured Learning Centers",
-    image: "https://images.unsplash.com/photo-1588072432836-e10032774350?w=800&auto=format&fit=crop&q=80",
-    desc: "A vibrant room featuring guided phonics, early math stations, science experiment tables, and structured music and drama corners.",
-    milestones: [
-      "Letter recognition & phonics sounds",
-      "Number counting 1 to 30",
-      "Scissor safety & pencil grip practice",
-      "Group problem solving & storytelling"
-    ],
-    programParam: "Preschool (2.9 - 4 Years)"
+    programParam: "Toddler Program (15 - 33 Months)"
   },
   {
     maxMonths: 60,
-    ageLabel: "Pre-K (4 – 5 Years)",
-    title: "Kindergarten Readiness & Leadership Suite",
-    tag: "Pre-K Academy Suite",
-    ratio: "1:10 Ratio • Kindergarten Ready",
+    ageLabel: "Preschool (2.9 – 5 Years)",
+    title: "Preschool Program",
+    tag: "Preschool Program",
+    ratio: "Kindergarten Ready",
     image: "https://images.unsplash.com/photo-1588072432836-e10032774350?w=800&auto=format&fit=crop&q=80",
-    desc: "Comprehensive kindergarten preparation focusing on early reading, writing, STEAM experiments, teamwork, and emotional confidence.",
+    desc: "An age-appropriate curriculum designed to prepare children for kindergarten, with an emphasis on writing, letter, and number recognition.",
     milestones: [
-      "Sight words, phonics & writing full name",
-      "Math addition concepts & counting to 100",
-      "STEM science inquiry & experiments",
-      "Confidence transitioning to Kindergarten"
+      "Writing, letter & number recognition",
+      "Age-appropriate kindergarten prep"
     ],
-    programParam: "Pre-Kindergarten (4 - 5 Years)"
+    programParam: "Preschool Program (2.9 - 5 Years)"
   }
 ];
 
@@ -257,13 +220,9 @@ function updateAgeExplorer(val) {
 
   const m1 = document.getElementById('milestone1');
   const m2 = document.getElementById('milestone2');
-  const m3 = document.getElementById('milestone3');
-  const m4 = document.getElementById('milestone4');
 
   if (m1) m1.textContent = matched.milestones[0];
   if (m2) m2.textContent = matched.milestones[1];
-  if (m3) m3.textContent = matched.milestones[2];
-  if (m4) m4.textContent = matched.milestones[3];
 
   const bookBtn = document.getElementById('bookSpecificRoomBtn');
   if (bookBtn) {
@@ -271,55 +230,37 @@ function updateAgeExplorer(val) {
   }
 }
 
-// ================= DAILY RHYTHM TIMELINE (100% VERIFIED REAL SMILING KIDS PHOTOS) =================
+// ================= DAILY RHYTHM TIMELINE =================
+// Content limited to what herewegrowdaycare.com actually publishes: open 7:30 AM Mon-Fri,
+// breakfast/snacks provided, lunch NOT provided, plus general active/quiet/outdoor play.
 const timelineData = [
   {
-    time: "7:30 AM – 8:30 AM",
-    step: "Step 1 of 6",
-    title: "Warm Welcomes & Wholesome Breakfast",
-    desc: "Children are greeted by name with warm smiles. Free choice morning play allows children to gently ease into their day while enjoying freshly prepared breakfast and milk.",
-    img: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800&auto=format&fit=crop&q=80",
-    note: "📱 Parents receive their morning check-in confirmation on the parent app."
+    time: "7:30 AM",
+    step: "Step 1 of 4",
+    title: "Morning Arrival",
+    desc: "Doors open Monday through Friday at 7:30 AM. Children are greeted warmly and settle in with quiet play as they arrive.",
+    img: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800&auto=format&fit=crop&q=80"
   },
   {
-    time: "9:00 AM – 10:15 AM",
-    step: "Step 2 of 6",
-    title: "Morning Circle, Music & Sing-Alongs",
-    desc: "Children gather on the cozy rug for interactive calendar time, songs, letter phonics, and cheerful movement games that build social bonds.",
-    img: "https://images.unsplash.com/photo-1588072432836-e10032774350?w=800&auto=format&fit=crop&q=80",
-    note: "🎵 Daily vocabulary word and song lyrics are shared with parents."
+    time: "Morning",
+    step: "Step 2 of 4",
+    title: "Breakfast & Snacks",
+    desc: "Breakfast and snacks are provided daily to keep little ones fueled through the morning and afternoon.",
+    img: "https://images.unsplash.com/photo-1588072432836-e10032774350?w=800&auto=format&fit=crop&q=80"
   },
   {
-    time: "10:15 AM – 11:30 AM",
-    step: "Step 3 of 6",
-    title: "Sensory Stations, STEAM & Creative Art",
-    desc: "Hands-on learning stations: finger painting, safe science experiments, building blocks, playdough sculpting, and early math counting games.",
-    img: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&auto=format&fit=crop&q=80",
-    note: "🎨 Real-time photos of art creations uploaded directly to parents."
+    time: "Midday",
+    step: "Step 3 of 4",
+    title: "Lunch Time",
+    desc: "Lunch is not provided — please send a packed lunch from home. Our teachers help with opening containers and encourage healthy eating habits.",
+    img: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&auto=format&fit=crop&q=80"
   },
   {
-    time: "11:30 AM – 12:30 PM",
-    step: "Step 4 of 6",
-    title: "Family-Style Healthy Lunch & Stories",
-    desc: "Children practice handwashing, self-feeding, and table manners in a joyful family setting. Teachers assist with warming and opening packed lunches.",
-    img: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800&auto=format&fit=crop&q=80",
-    note: "🍎 App update records meal portions eaten and hydration."
-  },
-  {
-    time: "12:30 PM – 2:30 PM",
-    step: "Step 5 of 6",
-    title: "Cozy Nap Sanctuary & Peaceful Rest",
-    desc: "Soft lullabies, dimmed lighting, and sanitized individual cots ensure every child recharges peacefully. Infant rooms follow individual sleep cycles.",
-    img: "https://images.unsplash.com/photo-1544126592-807ade215a0b?w=800&auto=format&fit=crop&q=80",
-    note: "😴 Rest duration logged for complete parent transparency."
-  },
-  {
-    time: "3:00 PM – 5:30 PM",
-    step: "Step 6 of 6",
-    title: "Outdoor Playgrounds, Afternoon Snack & Pick-Up",
-    desc: "Fresh air, climbing equipment, tricycle riding, sandbox games, followed by a wholesome afternoon snack and loving parent pick-up.",
-    img: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&auto=format&fit=crop&q=80",
-    note: "👋 Daily summary card sent to your phone as you arrive."
+    time: "Afternoon",
+    step: "Step 4 of 4",
+    title: "Activities & Pickup",
+    desc: "The rest of the day includes a balance of active and quiet play, outdoor activities, and games. Pickup is available until 5:00 PM at Pembroke and 5:30 PM at Randolph.",
+    img: "https://images.unsplash.com/photo-1566004100631-35d015d6a491?w=800&auto=format&fit=crop&q=80"
   }
 ];
 
@@ -341,24 +282,22 @@ function selectTimeline(index) {
   const stepName = document.getElementById('timelineStepName');
   const heading = document.getElementById('timelineHeading');
   const desc = document.getElementById('timelineDescription');
-  const note = document.getElementById('timelineParentNote');
 
   if (img) img.src = data.img;
   if (badge) badge.textContent = data.time;
   if (stepName) stepName.textContent = data.step;
   if (heading) heading.textContent = data.title;
   if (desc) desc.textContent = data.desc;
-  if (note) note.textContent = data.note;
 }
 
-// ================= TUITION ESTIMATOR =================
+// ================= TUITION & SCHEDULE =================
+// The real site publishes no pricing, so this no longer calculates a dollar amount —
+// it just keeps the campus-specific phone number in sync with the selected campus.
 let calcSelectedCampus = 'Pembroke';
-let calcSelectedDays = 5;
 
-const tuitionRates = {
-  infant: { 2: 240, 3: 310, 5: 395 },
-  toddler: { 2: 220, 3: 285, 5: 365 },
-  preschool: { 2: 195, 3: 260, 5: 335 }
+const campusContact = {
+  Pembroke: { name: 'Pembroke', tel: '7812936800', display: '(781) 293-6800' },
+  Randolph: { name: 'Randolph', tel: '7819864145', display: '(781) 986-4145' }
 };
 
 function calcSetCampus(campus) {
@@ -373,35 +312,12 @@ function calcSetCampus(campus) {
     if (btnRan) btnRan.className = 'p-3.5 rounded-2xl font-heading font-black text-xs border-2 border-tle-cyan bg-white text-tle-cyan shadow-sm transition';
     if (btnPem) btnPem.className = 'p-3.5 rounded-2xl font-heading font-black text-xs border-2 border-transparent bg-white/70 text-slate-700 hover:bg-white transition';
   }
-  recalculateTuition();
-}
 
-function calcSetDays(days) {
-  calcSelectedDays = days;
-  const d2 = document.getElementById('calcDays2');
-  const d3 = document.getElementById('calcDays3');
-  const d5 = document.getElementById('calcDays5');
-
-  if (d2) d2.className = 'p-3 rounded-2xl border-2 border-transparent bg-white/70 text-slate-700 transition';
-  if (d3) d3.className = 'p-3 rounded-2xl border-2 border-transparent bg-white/70 text-slate-700 transition';
-  if (d5) d5.className = 'p-3 rounded-2xl border-2 border-transparent bg-white/70 text-slate-700 transition';
-
-  if (days === 2 && d2) d2.className = 'p-3 rounded-2xl border-2 border-tle-cyan bg-white text-tle-cyan shadow-sm transition';
-  if (days === 3 && d3) d3.className = 'p-3 rounded-2xl border-2 border-tle-cyan bg-white text-tle-cyan shadow-sm transition';
-  if (days === 5 && d5) d5.className = 'p-3 rounded-2xl border-2 border-tle-cyan bg-white text-tle-cyan shadow-sm transition';
-
-  recalculateTuition();
-}
-
-function recalculateTuition() {
-  const progSelect = document.getElementById('calcProgramSelect');
-  const prog = progSelect ? progSelect.value : 'toddler';
-  const rate = tuitionRates[prog] ? tuitionRates[prog][calcSelectedDays] : 365;
-
-  const elem = document.getElementById('calcTuitionAmount');
-  if (elem) {
-    elem.innerHTML = `$${rate} <span class="text-sm font-normal text-slate-500">/ week</span>`;
-  }
+  const contact = campusContact[campus];
+  const callLink = document.getElementById('calcCallLink');
+  const callLabel = document.getElementById('calcCallLabel');
+  if (contact && callLink) callLink.href = `tel:${contact.tel}`;
+  if (contact && callLabel) callLabel.textContent = `Call ${contact.name}: ${contact.display}`;
 }
 
 // ================= TOUR MODAL WIZARD =================
@@ -480,7 +396,7 @@ function handleWizardSubmit(e) {
   e.preventDefault();
 
   const campus = document.querySelector('input[name="modalCampus"]:checked')?.value || 'Pembroke';
-  const program = document.getElementById('modalProgram')?.value || 'Toddler Discovery';
+  const program = document.getElementById('modalProgram')?.value || 'Toddler Program';
   const time = document.querySelector('input[name="modalTime"]:checked')?.value || '10:00 AM';
   const date = document.getElementById('tourDateInput')?.value || 'Tomorrow';
 
