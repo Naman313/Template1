@@ -338,6 +338,10 @@ h1, h2, h3, h4, .font-heading {
   z-index: 10;
 }
 
+.cover-text-shadow {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
 /* Floating & Wiggle Animations */
 @keyframes floatSlow {
   0%, 100% { transform: translateY(0px) rotate(0deg); }

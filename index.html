@@ -416,26 +416,35 @@
             <!-- PAGE 0: COVER -->
             <div class="book-page z-30" id="bookPage0">
               <div class="book-spine-shadow"></div>
-              <div class="h-full bg-gradient-to-br from-tle-purple via-[#8B2FA3] to-tle-purple text-white p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden">
-                <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full border-4 border-tle-yellow/20 pointer-events-none"></div>
+              <div class="h-full text-white relative overflow-hidden">
+                <img src="temp_tle_hero/IMG_5267.jpg" alt="Smiling child beside a colorful paper turkey craft at Here We Grow Daycare" loading="eager" decoding="async" class="absolute inset-0 w-full h-full object-cover object-[50%_8%]" />
+                <div class="absolute inset-0 bg-gradient-to-t from-tle-purple/95 via-tle-purple/50 to-tle-purple/10 pointer-events-none"></div>
 
-                <div class="space-y-3">
-                  <div class="flex items-center gap-2 text-tle-yellow text-xs font-black uppercase tracking-widest">
-                    <span>★</span> Welcome to Here We Grow Daycare
-                  </div>
-                  <h3 class="font-serif text-3xl sm:text-4xl font-bold leading-tight">
-                    Where Happy Days &amp; Bright Futures Begin.
-                  </h3>
-                  <p class="text-sm text-purple-100 max-w-md">
-                    Premier play-based childcare and early education for ages 1 month to 5 years in Pembroke and Randolph, MA.
-                  </p>
+                <div class="absolute top-5 left-6 sm:top-6 sm:left-10">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-tle-yellow text-slate-900 text-[11px] font-black uppercase tracking-wider shadow-lg">
+                    <span>★</span> Pembroke &amp; Randolph, MA
+                  </span>
                 </div>
 
-                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-6 border-t border-purple-400/40">
-                  <button onclick="flipPage(0)" class="px-7 py-3.5 rounded-full font-heading font-black text-xs bg-tle-yellow text-slate-900 hover:bg-amber-300 shadow-lg transition flex items-center gap-2">
-                    Open Storybook &amp; Flip Pages <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                  </button>
-                  <span class="text-xs text-purple-200 font-medium">Click to turn page →</span>
+                <div class="absolute inset-x-0 bottom-0 p-6 sm:p-10 space-y-4">
+                  <div class="space-y-2">
+                    <div class="text-tle-yellow text-xs font-black uppercase tracking-widest cover-text-shadow">
+                      Welcome to Here We Grow Daycare
+                    </div>
+                    <h3 class="font-serif text-3xl sm:text-4xl font-bold leading-tight cover-text-shadow">
+                      Where Happy Days &amp; Bright Futures Begin.
+                    </h3>
+                    <p class="text-sm text-purple-50 max-w-md cover-text-shadow">
+                      Play-based childcare &amp; early education, ages 1 month – 5 years.
+                    </p>
+                  </div>
+
+                  <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-4 border-t border-white/30">
+                    <button onclick="flipPage(0)" class="px-7 py-3.5 rounded-full font-heading font-black text-xs bg-tle-yellow text-slate-900 hover:bg-amber-300 shadow-lg transition flex items-center gap-2">
+                      Open Storybook &amp; Flip Pages <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                    <span class="text-xs text-purple-100 font-medium cover-text-shadow">Click to turn page →</span>
+                  </div>
                 </div>
               </div>
             </div>
