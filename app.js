@@ -342,8 +342,11 @@ function closeTourModal() {
   }
 }
 
-// Sends Name/Email/Mobile/Message to Formspree, which emails it to dubeynaman31@gmail.com.
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgavkobl';
+// Sends Name/Email/Mobile/Message to FormSubmit, which emails it to dubeynaman31@gmail.com.
+// No account/dashboard needed for either us or the client — the FIRST-EVER submission to a new
+// email address triggers a one-time confirmation email from FormSubmit to that inbox; once that
+// link is clicked, every submission after that is delivered automatically.
+const FORMSUBMIT_ENDPOINT = 'https://formsubmit.co/ajax/dubeynaman31@gmail.com';
 
 async function handleContactSubmit(e) {
   e.preventDefault();
@@ -359,14 +362,21 @@ async function handleContactSubmit(e) {
   }
 
   try {
-    const response = await fetch(FORMSPREE_ENDPOINT, {
+    const payload = Object.fromEntries(new FormData(form));
+
+    const response = await fetch(FORMSUBMIT_ENDPOINT, {
       method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(payload)
     });
 
-    if (!response.ok) {
-      throw new Error('Formspree returned an error response');
+    const data = await response.json().catch(() => null);
+
+    if (!response.ok || !data || data.success !== 'true') {
+      throw new Error('FormSubmit returned an error response');
     }
 
     const nameValue = form.querySelector('[name="name"]')?.value;

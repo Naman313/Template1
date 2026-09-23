@@ -1139,6 +1139,10 @@
 
       <form id="tourContactForm" onsubmit="handleContactSubmit(event)" class="p-6 space-y-4">
 
+        <input type="hidden" name="_subject" value="New Message from Here We Grow Website" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+
         <div class="space-y-1">
           <label class="text-xs font-bold text-slate-700">Name:</label>
           <input type="text" name="name" placeholder="Jane Doe" required class="w-full p-2.5 rounded-xl border border-stone-300 text-xs focus:border-tle-cyan outline-none" />
